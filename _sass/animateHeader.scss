@@ -6,8 +6,8 @@
     left: 0px;
     z-index: 0;
     list-style-type: none;
+    padding: 0;
 }
-
 
 .cb-slideshow li span {
     width: 100%;
@@ -18,10 +18,10 @@
     color: transparent;
     background-size: cover;
     background-position: 50% 50%;
-    background-repeat: none;
+    background-repeat: no-repeat;
     opacity: 0;
     z-index: 0;
-    animation: imageAnimation 18s linear infinite 0s;
+    animation: imageAnimation 36s linear infinite 0s;
 }
 
 .cb-slideshow li .header-content-inner {
@@ -33,12 +33,12 @@
     text-align: center;
     opacity: 0;
     color: #fff;
-    animation: titleAnimation 18s linear infinite 0s;
+    animation: titleAnimation 36s linear infinite 0s;
 }
 
 
 .cb-slideshow li:nth-child(1) span {
-    background-image: url(../img/1.jpg)
+    background-image: url(../img/1.jpg);
 }
 .cb-slideshow li:nth-child(2) span {
     background-image: url(../img/2.jpg);
@@ -52,11 +52,12 @@
 .cb-slideshow li:nth-child(2) .header-content-inner {
     animation-delay: 6s;
 }
+
 .cb-slideshow li:nth-child(3) .header-content-inner {
     animation-delay: 12s;
 }
 
-
+/* Animation for the slideshow images */
 @keyframes imageAnimation {
     0% { opacity: 0; animation-timing-function: ease-in; }
     8% { opacity: 1; animation-timing-function: ease-out; }
@@ -65,14 +66,12 @@
     100% { opacity: 0 }
 }
 
+/* Animation for the title */
+
 @keyframes titleAnimation {
     0% { opacity: 0 }
     8% { opacity: 1 }
     17% { opacity: 1 }
     19% { opacity: 0 }
     100% { opacity: 0 }
-}
-
-.no-cssanimations .cb-slideshow li span {
-	opacity: 1;
 }
