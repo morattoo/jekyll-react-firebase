@@ -27,7 +27,7 @@
 .cb-slideshow li .header-content-inner {
     z-index: 1000;
     position: absolute;
-    bottom: 30px;
+    bottom: 30%;
     left: 0px;
     width: 100%;
     text-align: center;
@@ -38,23 +38,44 @@
 
 
 .cb-slideshow li:nth-child(1) span {
-    background-image: url(../img/1.jpg);
+    background-image: url(../img/slider/1.jpg)
 }
 .cb-slideshow li:nth-child(2) span {
-    background-image: url(../img/2.jpg);
+    background-image: url(../img/slider/2.jpg);
     animation-delay: 6s;
 }
 .cb-slideshow li:nth-child(3) span {
-    background-image: url(../img/3.jpg);
+    background-image: url(../img/slider/3.jpg);
     animation-delay: 12s;
 }
+.cb-slideshow li:nth-child(4) span {
+    background-image: url(../img/slider/4.jpg);
+    animation-delay: 18s;
+}
+.cb-slideshow li:nth-child(5) span {
+    background-image: url(../img/slider/5.jpg);
+    animation-delay: 24s;
+}
+.cb-slideshow li:nth-child(6) span {
+    background-image: url(../img/slider/6.jpg);
+    animation-delay: 30s;
+}
+
 
 .cb-slideshow li:nth-child(2) .header-content-inner {
     animation-delay: 6s;
 }
-
 .cb-slideshow li:nth-child(3) .header-content-inner {
     animation-delay: 12s;
+}
+.cb-slideshow li:nth-child(4) .header-content-inner {
+    animation-delay: 18s;
+}
+.cb-slideshow li:nth-child(5) .header-content-inner {
+    animation-delay: 24s;
+}
+.cb-slideshow li:nth-child(6) .header-content-inner {
+    animation-delay: 30s;
 }
 
 /* Animation for the slideshow images */
