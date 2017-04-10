@@ -1,0 +1,31 @@
+// Homepage Header
+
+header {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    text-align: center;
+    color: white;
+    min-height: 500px;
+
+    @media (min-width: 768px) {
+        min-height: 100%;
+    }
+}
+
+
+.header-content-inner {
+    h1 {
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    p {
+        font-weight: 300;
+        color: white;
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+}
