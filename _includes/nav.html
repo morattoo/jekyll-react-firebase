@@ -12,24 +12,45 @@
             </a>
         </div>
 
+
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+
+              {% if page.layout == "front" %}
+              <li>
+                  <a class="page-scroll" href="immeubles.html">Nos immeubles</a>
+              </li>
+              <li>
+                  <a class="page-scroll" href="#about">À propos</a>
+              </li>
+              <li>
+                  <a class="page-scroll" href="#services">Services</a>
+              </li>
+              <li>
+                  <a class="page-scroll" href="#portfolio">Survol immobilier</a>
+              </li>
+              <li>
+                  <a class="page-scroll" href="#contact">Contact</a>
+              </li>
+
+              {% else %}
                 <li>
-                    <a class="page-scroll" href="#">Nos immeubles</a>
+                    <a class="page-scroll" href="immeubles.html">Nos immeubles</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#about">À propos</a>
+                    <a class="page-scroll" href="index.html#about">À propos</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#services">Services</a>
+                    <a class="page-scroll" href="index.html#services">Services</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#portfolio">Survol immobilier</a>
+                    <a class="page-scroll" href="index.html#portfolio">Survol immobilier</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#contact">Contact</a>
                 </li>
+              {% endif %}
             </ul>
         </div>
         <!-- /.navbar-collapse -->
