@@ -1,0 +1,23 @@
+{
+  "name": "jekillgestion",
+  "version": "1.0.0",
+  "description": "page Jekyll",
+  "main": "_site/js/app.js",
+  "scripts": {
+    "build": "webpack --colors",
+    "start": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  }
+}
