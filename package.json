@@ -4,7 +4,7 @@
   "description": "page Jekyll",
   "main": "_site/js/app.js",
   "scripts": {
-    "build": "webpack --colors",
+    "build": "webpack --colors --watch",
     "start": "npm run build"
   },
   "author": "",
@@ -17,6 +17,7 @@
     "webpack": "^1.14.0"
   },
   "dependencies": {
+    "firebase": "^3.7.8",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   }
