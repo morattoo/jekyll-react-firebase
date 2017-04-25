@@ -9,11 +9,18 @@ class Item extends Component {
   render() {
     const { adresse, disponible, options, prix, type, name} = this.props.apto;
     const srcImg = "img/aptos/" + name + ".jpg";
+    const displayType = type.split(",");
+
 
     return(<li className="listAptos__item">
-      <img src={srcImg} alt="" className="listAptos__img"/>
-      <p className="listAptos__adress">{adresse}</p>
-      <div className="listAptos__info"><span className="listAptos__prix">{prix}</span>{type}</div>
+      <div className="listAptos__wrapper">
+        <img src={srcImg} alt="" className="listAptos__img"/>
+        <div className="listAptos__info">
+          <span className="listAptos__type">{displayType[0]}<sup>{displayType[1]}</sup></span>
+          <span className="listAptos__prix">{prix}$ <span>(par mois)</span></span>
+        </div>
+        <p className="listAptos__adress">{adresse}</p>
+      </div>
     </li>);
   }
 }

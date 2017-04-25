@@ -21964,25 +21964,45 @@
 	          name = _props$apto.name;
 
 	      var srcImg = "img/aptos/" + name + ".jpg";
+	      var displayType = type.split(",");
 
 	      return _react2.default.createElement(
 	        "li",
 	        { className: "listAptos__item" },
-	        _react2.default.createElement("img", { src: srcImg, alt: "", className: "listAptos__img" }),
-	        _react2.default.createElement(
-	          "p",
-	          { className: "listAptos__adress" },
-	          adresse
-	        ),
 	        _react2.default.createElement(
 	          "div",
-	          { className: "listAptos__info" },
+	          { className: "listAptos__wrapper" },
+	          _react2.default.createElement("img", { src: srcImg, alt: "", className: "listAptos__img" }),
 	          _react2.default.createElement(
-	            "span",
-	            { className: "listAptos__prix" },
-	            prix
+	            "div",
+	            { className: "listAptos__info" },
+	            _react2.default.createElement(
+	              "span",
+	              { className: "listAptos__type" },
+	              displayType[0],
+	              _react2.default.createElement(
+	                "sup",
+	                null,
+	                displayType[1]
+	              )
+	            ),
+	            _react2.default.createElement(
+	              "span",
+	              { className: "listAptos__prix" },
+	              prix,
+	              "$ ",
+	              _react2.default.createElement(
+	                "span",
+	                null,
+	                "(par mois)"
+	              )
+	            )
 	          ),
-	          type
+	          _react2.default.createElement(
+	            "p",
+	            { className: "listAptos__adress" },
+	            adresse
+	          )
 	        )
 	      );
 	    }
