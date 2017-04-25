@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Item from '../Item/item';
 
 import * as Firebase from 'firebase';
 
@@ -39,7 +40,7 @@ class List extends Component {
 
   generatorList() {
     const listAptos = this.state.aptos.map(function(apto, index) {
-      return(<li className="listAptos__items" key={index}>{apto.adresse}</li>);
+      return(<Item key={index} apto={apto} />);
     });
 
     return (<ul className="listAptos__container">{listAptos}</ul>);
@@ -48,9 +49,20 @@ class List extends Component {
   render() {
     var aptos = this.generatorList();
     return(
-      <div className="listAptos">
-        {aptos}
-      </div>
+      <section className="listAptos__section">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12 text-center">
+                <h2 className="section-heading">Nos immeubles disponible</h2>
+                <hr className="primary"/>
+            </div>
+            <div className="col-lg-12 listAptos">
+              {aptos}
+            </div>
+          </div>
+        </div>
+      </section>
+
     );
   }
 

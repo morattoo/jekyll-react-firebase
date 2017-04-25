@@ -11,7 +11,7 @@ module.exports = {
 
 	output: {
 		filename: 'app.js',
-		path: './_site/js',
+		path: './js',
 		publicPath: '/'
 	},
 
@@ -20,7 +20,10 @@ module.exports = {
 			{
 				test: /(\.js|jsx)$/,
 				exclude:/node_modules/,
-				loaders:['babel']
+				loader: 'babel-loader',
+				query: {
+	           presets: ['es2015']
+					 }
 			}
 		]
 	}
