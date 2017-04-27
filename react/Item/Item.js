@@ -32,12 +32,12 @@ class Item extends Component {
 
     for (var prop in services) {
       if (services.hasOwnProperty(prop)) {
-        console.log(services[prop]);
         if(services[prop]) {
           listServices.push(<ServiceItem key={prop} service={prop}/>);
         }
       }
     }
+
     return (<ul className="listAptos__services">{listServices}</ul>);
   }
 

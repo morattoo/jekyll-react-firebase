@@ -21813,7 +21813,7 @@
 
 	var _item2 = _interopRequireDefault(_item);
 
-	var _firebase = __webpack_require__(303);
+	var _firebase = __webpack_require__(304);
 
 	var Firebase = _interopRequireWildcard(_firebase);
 
@@ -21939,7 +21939,7 @@
 
 	var _moment2 = _interopRequireDefault(_moment);
 
-	var _ServiceItem = __webpack_require__(317);
+	var _ServiceItem = __webpack_require__(303);
 
 	var _ServiceItem2 = _interopRequireDefault(_ServiceItem);
 
@@ -21986,12 +21986,12 @@
 
 	      for (var prop in services) {
 	        if (services.hasOwnProperty(prop)) {
-	          console.log(services[prop]);
 	          if (services[prop]) {
 	            listServices.push(_react2.default.createElement(_ServiceItem2.default, { key: prop, service: prop }));
 	          }
 	        }
 	      }
+
 	      return _react2.default.createElement(
 	        'ul',
 	        { className: 'listAptos__services' },
@@ -37889,27 +37889,67 @@
 /* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*! @license Firebase v3.7.8
-	Build: rev-44ec95c
-	Terms: https://firebase.google.com/terms/ */
-
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
-	var firebase = __webpack_require__(304);
-	__webpack_require__(313);
-	var Storage, XMLHttpRequest;
 
-	__webpack_require__(314);
-	__webpack_require__(315);
-	var AsyncStorage;
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	__webpack_require__(316);
-	exports.default = firebase;
-	module.exports = exports['default'];
+	var _react = __webpack_require__(2);
 
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ServiceItem = function (_Component) {
+	  _inherits(ServiceItem, _Component);
+
+	  function ServiceItem(props) {
+	    _classCallCheck(this, ServiceItem);
+
+	    return _possibleConstructorReturn(this, (ServiceItem.__proto__ || Object.getPrototypeOf(ServiceItem)).call(this, props));
+	  }
+
+	  _createClass(ServiceItem, [{
+	    key: "render",
+	    value: function render() {
+
+	      var className = "";
+	      switch (this.props.service) {
+	        case "chauffe":
+	          className = "fa fa-thermometer-three-quarters";
+	          break;
+	        case "eau-chaude":
+	          className = "fa fa-bath";
+	          break;
+	        case "eclaire":
+	          className = "fa fa-lightbulb-o";
+	          break;
+	        case "semi-meuble":
+	          className = "fa fa-bed";
+	          break;
+	        default:
+	      }
+	      return _react2.default.createElement(
+	        "li",
+	        { className: "listAptos__serviceItem" },
+	        _react2.default.createElement("i", { className: className, "aria-hidden": "true" })
+	      );
+	    }
+	  }]);
+
+	  return ServiceItem;
+	}(_react.Component);
+
+	exports.default = ServiceItem;
 
 /***/ }),
 /* 304 */
@@ -37922,10 +37962,36 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var firebase = __webpack_require__(305);
+	__webpack_require__(314);
+	var Storage, XMLHttpRequest;
+
+	__webpack_require__(315);
+	__webpack_require__(316);
+	var AsyncStorage;
+
+	__webpack_require__(317);
+	exports.default = firebase;
+	module.exports = exports['default'];
+
+
+/***/ }),
+/* 305 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	/*! @license Firebase v3.7.8
+	Build: rev-44ec95c
+	Terms: https://firebase.google.com/terms/ */
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
-	var _firebase_app = __webpack_require__(305);
+	var _firebase_app = __webpack_require__(306);
 
 	var firebase = (0, _firebase_app.createFirebaseNamespace)(); 
 	exports.default = firebase;
@@ -37933,7 +37999,7 @@
 
 
 /***/ }),
-/* 305 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*! @license Firebase v3.7.8
@@ -37950,13 +38016,13 @@
 
 	exports.createFirebaseNamespace = createFirebaseNamespace;
 
-	var _deep_copy = __webpack_require__(306);
+	var _deep_copy = __webpack_require__(307);
 
-	var _subscribe = __webpack_require__(307);
+	var _subscribe = __webpack_require__(308);
 
-	var _errors = __webpack_require__(312);
+	var _errors = __webpack_require__(313);
 
-	var _shared_promise = __webpack_require__(308);
+	var _shared_promise = __webpack_require__(309);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -38218,7 +38284,7 @@
 
 
 /***/ }),
-/* 306 */
+/* 307 */
 /***/ (function(module, exports) {
 
 	/*! @license Firebase v3.7.8
@@ -38269,7 +38335,7 @@
 
 
 /***/ }),
-/* 307 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*! @license Firebase v3.7.8
@@ -38289,7 +38355,7 @@
 	exports.createSubscribe = createSubscribe;
 	exports.async = async;
 
-	var _shared_promise = __webpack_require__(308);
+	var _shared_promise = __webpack_require__(309);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -38502,7 +38568,7 @@
 
 
 /***/ }),
-/* 308 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*! @license Firebase v3.7.8
@@ -38526,7 +38592,7 @@
 	        throw new Error('polyfill failed because global object is unavailable in this environment');
 	    }
 	}
-	var PromiseImpl = scope.Promise || __webpack_require__(309);
+	var PromiseImpl = scope.Promise || __webpack_require__(310);
 	var local = exports.local = {
 	    Promise: PromiseImpl,
 	    GoogPromise: PromiseImpl
@@ -38535,7 +38601,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 309 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(setImmediate) {(function (root) {
@@ -38772,10 +38838,10 @@
 
 	})(this);
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(310).setImmediate))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(311).setImmediate))
 
 /***/ }),
-/* 310 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var apply = Function.prototype.apply;
@@ -38828,13 +38894,13 @@
 	};
 
 	// setimmediate attaches itself to the global object
-	__webpack_require__(311);
+	__webpack_require__(312);
 	exports.setImmediate = setImmediate;
 	exports.clearImmediate = clearImmediate;
 
 
 /***/ }),
-/* 311 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -39027,7 +39093,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(4)))
 
 /***/ }),
-/* 312 */
+/* 313 */
 /***/ (function(module, exports) {
 
 	/*! @license Firebase v3.7.8
@@ -39122,14 +39188,14 @@
 
 
 /***/ }),
-/* 313 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*! @license Firebase v3.7.8
 	Build: rev-44ec95c
 	Terms: https://firebase.google.com/terms/ */
 
-	var firebase = __webpack_require__(304);
+	var firebase = __webpack_require__(305);
 	(function(){
 	(function(){var h,aa=aa||{},l=this,ba=function(){},ca=function(a){var b=typeof a;if("object"==b)if(a){if(a instanceof Array)return"array";if(a instanceof Object)return b;var c=Object.prototype.toString.call(a);if("[object Window]"==c)return"object";if("[object Array]"==c||"number"==typeof a.length&&"undefined"!=typeof a.splice&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("splice"))return"array";if("[object Function]"==c||"undefined"!=typeof a.call&&"undefined"!=typeof a.propertyIsEnumerable&&
 	!a.propertyIsEnumerable("call"))return"function"}else return"null";else if("function"==b&&"undefined"==typeof a.call)return"object";return b},da=function(a){return null===a},ea=function(a){return"array"==ca(a)},fa=function(a){var b=ca(a);return"array"==b||"object"==b&&"number"==typeof a.length},m=function(a){return"string"==typeof a},ga=function(a){return"number"==typeof a},p=function(a){return"function"==ca(a)},ha=function(a){var b=typeof a;return"object"==b&&null!=a||"function"==b},ia=function(a,
@@ -39377,7 +39443,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 314 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*! @license Firebase v3.7.8
@@ -39407,7 +39473,7 @@
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	THE SOFTWARE. */
 
-	var firebase = __webpack_require__(304);
+	var firebase = __webpack_require__(305);
 	(function(){
 	(function() {var g,aa=this;function n(a){return void 0!==a}function ba(){}function ca(a){a.Vb=function(){return a.Ye?a.Ye:a.Ye=new a}}
 	function da(a){var b=typeof a;if("object"==b)if(a){if(a instanceof Array)return"array";if(a instanceof Object)return b;var c=Object.prototype.toString.call(a);if("[object Window]"==c)return"object";if("[object Array]"==c||"number"==typeof a.length&&"undefined"!=typeof a.splice&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("splice"))return"array";if("[object Function]"==c||"undefined"!=typeof a.call&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("call"))return"function"}else return"null";
@@ -39647,14 +39713,14 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 315 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*! @license Firebase v3.7.8
 	Build: rev-44ec95c
 	Terms: https://firebase.google.com/terms/ */
 
-	var firebase = __webpack_require__(304);
+	var firebase = __webpack_require__(305);
 	(function(){
 	(function(){for(var h,aa="function"==typeof Object.defineProperties?Object.defineProperty:function(a,b,c){if(c.get||c.set)throw new TypeError("ES3 does not support getters and setters.");a!=Array.prototype&&a!=Object.prototype&&(a[b]=c.value)},l="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global&&null!=global?global:this,n=["Number","MIN_SAFE_INTEGER"],ba=0;ba<n.length-1;ba++){var ca=n[ba];ca in l||(l[ca]={});l=l[ca]}var da=n[n.length-1];
 	-9007199254740991!=l[da]&&aa(l,da,{configurable:!0,writable:!0,value:-9007199254740991});
@@ -39711,14 +39777,14 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 316 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*! @license Firebase v3.7.8
 	Build: rev-44ec95c
 	Terms: https://firebase.google.com/terms/ */
 
-	var firebase = __webpack_require__(304);
+	var firebase = __webpack_require__(305);
 	(function(){
 	(function(){var f=function(a,b){function c(){}c.prototype=b.prototype;a.prototype=new c;for(var d in b)if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,d);e&&Object.defineProperty(a,d,e)}else a[d]=b[d]},g=this,h=function(a){var b=typeof a;if("object"==b)if(a){if(a instanceof Array)return"array";if(a instanceof Object)return b;var c=Object.prototype.toString.call(a);if("[object Window]"==c)return"object";if("[object Array]"==c||"number"==typeof a.length&&"undefined"!=typeof a.splice&&"undefined"!=
 	typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("splice"))return"array";if("[object Function]"==c||"undefined"!=typeof a.call&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("call"))return"function"}else return"null";else if("function"==b&&"undefined"==typeof a.call)return"object";return b},k=function(a,b){function c(){}c.prototype=b.prototype;a.B=b.prototype;a.prototype=new c;a.u=function(a,c,n){for(var d=Array(arguments.length-2),e=2;e<arguments.length;e++)d[e-2]=arguments[e];
@@ -39756,72 +39822,6 @@
 	}).call(typeof global !== undefined ? global : typeof self !== undefined ? self : typeof window !== undefined ? window : {});
 	module.exports = firebase.messaging;
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
-
-/***/ }),
-/* 317 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ServiceItem = function (_Component) {
-	  _inherits(ServiceItem, _Component);
-
-	  function ServiceItem(props) {
-	    _classCallCheck(this, ServiceItem);
-
-	    return _possibleConstructorReturn(this, (ServiceItem.__proto__ || Object.getPrototypeOf(ServiceItem)).call(this, props));
-	  }
-
-	  _createClass(ServiceItem, [{
-	    key: "render",
-	    value: function render() {
-
-	      var className = "";
-	      switch (this.props.service) {
-	        case "chauffe":
-	          className = "fa fa-thermometer-three-quarters";
-	          break;
-	        case "eau-chaude":
-	          className = "fa fa-bath";
-	          break;
-	        case "eclaire":
-	          className = "fa fa-lightbulb-o";
-	          break;
-	        case "semi-meuble":
-	          className = "fa fa-bed";
-	          break;
-	        default:
-	      }
-	      return _react2.default.createElement(
-	        "li",
-	        { className: "listAptos__serviceItem" },
-	        _react2.default.createElement("i", { className: className, "aria-hidden": "true" })
-	      );
-	    }
-	  }]);
-
-	  return ServiceItem;
-	}(_react.Component);
-
-	exports.default = ServiceItem;
 
 /***/ })
 /******/ ]);
