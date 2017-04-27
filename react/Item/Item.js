@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import ServiceItem from '../Service/ServiceItem';
 
 class Item extends Component {
 
@@ -21,11 +22,31 @@ class Item extends Component {
     return dateDisplay;
   }
 
+  getService(){
+
+  }
+
+  getListServices(services) {
+
+    const listServices = [];
+
+    for (var prop in services) {
+      if (services.hasOwnProperty(prop)) {
+        console.log(services[prop]);
+        if(services[prop]) {
+          listServices.push(<ServiceItem key={prop} service={prop}/>);
+        }
+      }
+    }
+    return (<ul className="listAptos__services">{listServices}</ul>);
+  }
+
   render() {
     const { adresse, disponible, options, prix, type, name, date} = this.props.apto;
     const srcImg = "img/aptos/" + name + ".jpg";
     const displayType = type.split(",");
     const dateDisplayFormat = this.getDateDisplay(date);
+    const listServices = this.getListServices(options);
 
     return(<li className="listAptos__item">
       <div className="listAptos__wrapper">
@@ -36,13 +57,7 @@ class Item extends Component {
         </div>
         <p className="listAptos__adress">{adresse}</p>
         <p className="listAptos__adress">Disponible, {dateDisplayFormat}</p>
-        <ul>
-          <li><i className="fa fa-thermometer-three-quarters" aria-hidden="true"></i></li>
-          <li><i className="fa fa-lightbulb-o" aria-hidden="true"></i></li>
-          <li><i className="fa fa-bath" aria-hidden="true"></i></li>
-          <li><i className="fa fa-snowflake-o" aria-hidden="true"></i></li>
-          <li><i className="fa fa-bed" aria-hidden="true"></i></li>
-        </ul>
+        {listServices}
       </div>
     </li>);
   }

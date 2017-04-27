@@ -21939,6 +21939,10 @@
 
 	var _moment2 = _interopRequireDefault(_moment);
 
+	var _ServiceItem = __webpack_require__(317);
+
+	var _ServiceItem2 = _interopRequireDefault(_ServiceItem);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21972,6 +21976,29 @@
 	      return dateDisplay;
 	    }
 	  }, {
+	    key: 'getService',
+	    value: function getService() {}
+	  }, {
+	    key: 'getListServices',
+	    value: function getListServices(services) {
+
+	      var listServices = [];
+
+	      for (var prop in services) {
+	        if (services.hasOwnProperty(prop)) {
+	          console.log(services[prop]);
+	          if (services[prop]) {
+	            listServices.push(_react2.default.createElement(_ServiceItem2.default, { key: prop, service: prop }));
+	          }
+	        }
+	      }
+	      return _react2.default.createElement(
+	        'ul',
+	        { className: 'listAptos__services' },
+	        listServices
+	      );
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _props$apto = this.props.apto,
@@ -21986,6 +22013,7 @@
 	      var srcImg = "img/aptos/" + name + ".jpg";
 	      var displayType = type.split(",");
 	      var dateDisplayFormat = this.getDateDisplay(date);
+	      var listServices = this.getListServices(options);
 
 	      return _react2.default.createElement(
 	        'li',
@@ -22030,35 +22058,7 @@
 	            'Disponible, ',
 	            dateDisplayFormat
 	          ),
-	          _react2.default.createElement(
-	            'ul',
-	            null,
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement('i', { className: 'fa fa-thermometer-three-quarters', 'aria-hidden': 'true' })
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement('i', { className: 'fa fa-lightbulb-o', 'aria-hidden': 'true' })
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement('i', { className: 'fa fa-bath', 'aria-hidden': 'true' })
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement('i', { className: 'fa fa-snowflake-o', 'aria-hidden': 'true' })
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement('i', { className: 'fa fa-bed', 'aria-hidden': 'true' })
-	            )
-	          )
+	          listServices
 	        )
 	      );
 	    }
@@ -39756,6 +39756,72 @@
 	}).call(typeof global !== undefined ? global : typeof self !== undefined ? self : typeof window !== undefined ? window : {});
 	module.exports = firebase.messaging;
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ }),
+/* 317 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ServiceItem = function (_Component) {
+	  _inherits(ServiceItem, _Component);
+
+	  function ServiceItem(props) {
+	    _classCallCheck(this, ServiceItem);
+
+	    return _possibleConstructorReturn(this, (ServiceItem.__proto__ || Object.getPrototypeOf(ServiceItem)).call(this, props));
+	  }
+
+	  _createClass(ServiceItem, [{
+	    key: "render",
+	    value: function render() {
+
+	      var className = "";
+	      switch (this.props.service) {
+	        case "chauffe":
+	          className = "fa fa-thermometer-three-quarters";
+	          break;
+	        case "eau-chaude":
+	          className = "fa fa-bath";
+	          break;
+	        case "eclaire":
+	          className = "fa fa-lightbulb-o";
+	          break;
+	        case "semi-meuble":
+	          className = "fa fa-bed";
+	          break;
+	        default:
+	      }
+	      return _react2.default.createElement(
+	        "li",
+	        { className: "listAptos__serviceItem" },
+	        _react2.default.createElement("i", { className: className, "aria-hidden": "true" })
+	      );
+	    }
+	  }]);
+
+	  return ServiceItem;
+	}(_react.Component);
+
+	exports.default = ServiceItem;
 
 /***/ })
 /******/ ]);
