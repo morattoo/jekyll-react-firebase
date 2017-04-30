@@ -90,9 +90,9 @@
 /* Animation for the title */
 
 @keyframes titleAnimation {
-    0% { opacity: 0 }
-    8% { opacity: 1 }
-    17% { opacity: 1 }
-    19% { opacity: 0 }
-    100% { opacity: 0 }
+    0% { opacity: 0; z-index: 1000;}
+    8% { opacity: 1; z-index: 1001;}
+    17% { opacity: 1; z-index: 1001;}
+    19% { opacity: 0; z-index: 1001;}
+    100% { opacity: 0; z-index: 1000;}
 }

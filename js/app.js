@@ -22049,16 +22049,29 @@
 	          ),
 	          _react2.default.createElement(
 	            'p',
-	            { className: 'listAptos__adress' },
+	            { className: 'listAptos__adresse' },
 	            adresse
 	          ),
 	          _react2.default.createElement(
 	            'p',
-	            { className: 'listAptos__adress' },
+	            { className: 'listAptos__date' },
 	            'Disponible, ',
-	            dateDisplayFormat
+	            _react2.default.createElement(
+	              'b',
+	              null,
+	              dateDisplayFormat
+	            )
 	          ),
-	          listServices
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'listAptos__wrapperService' },
+	            _react2.default.createElement(
+	              'span',
+	              { className: 'listAptos__title' },
+	              'Include:'
+	            ),
+	            listServices
+	          )
 	        )
 	      );
 	    }

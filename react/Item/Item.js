@@ -55,9 +55,12 @@ class Item extends Component {
           <span className="listAptos__type">{displayType[0]}<sup>{displayType[1]}</sup></span>
           <span className="listAptos__prix">{prix}$ <span>(par mois)</span></span>
         </div>
-        <p className="listAptos__adress">{adresse}</p>
-        <p className="listAptos__adress">Disponible, {dateDisplayFormat}</p>
-        {listServices}
+        <p className="listAptos__adresse">{adresse}</p>
+        <p className="listAptos__date">Disponible, <b>{dateDisplayFormat}</b></p>
+        <div className="listAptos__wrapperService">
+          <span className="listAptos__title">Include:</span>
+          {listServices}
+        </div>
       </div>
     </li>);
   }

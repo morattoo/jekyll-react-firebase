@@ -8,8 +8,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll navbar-brand--go" href="#page-top" alt="Gestion oceanne inc.">
-            </a>
+            {% if page.layout == "front" %}
+              <a class="navbar-brand page-scroll navbar-brand--go" href="#page-top" alt="Gestion oceanne inc."></a>
+            {% else %}
+              <a class="navbar-brand page-scroll navbar-brand--go" href="index.html#page-top" alt="Gestion oceanne inc."></a>
+            {% endif %}
         </div>
 
 

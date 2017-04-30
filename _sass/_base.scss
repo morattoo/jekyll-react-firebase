@@ -52,6 +52,10 @@ p {
     background-color: $theme-primary;
 }
 
+.bg-secondary {
+  background-color: $theme-secondary;
+}
+
 .bg-dark {
     background-color: $theme-dark;
     color: white;
@@ -161,4 +165,20 @@ img::-moz-selection {
 
 body {
     -webkit-tap-highlight-color: $theme-dark;
+}
+
+.loading {
+  margin-top: 55px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='24px' height='30px' viewBox='0 0 24 30' style='enable-background:new 0 0 50 50;' xml:space='preserve'%3E%3Crect x='0' y='9.35756' width='4' height='12.2849' fill='%23247ba0'%3E%3Canimate attributeName='height' attributeType='XML' values='5;21;5' begin='0s' dur='0.6s' repeatCount='indefinite'%3E%3C/animate%3E%3Canimate attributeName='y' attributeType='XML' values='13; 5; 13' begin='0s' dur='0.6s' repeatCount='indefinite'%3E%3C/animate%3E%3C/rect%3E%3Crect x='10' y='5.35756' width='4' height='20.2849' fill='%2370c1b3'%3E%3Canimate attributeName='height' attributeType='XML' values='5;21;5' begin='0.15s' dur='0.6s' repeatCount='indefinite'%3E%3C/animate%3E%3Canimate attributeName='y' attributeType='XML' values='13; 5; 13' begin='0.15s' dur='0.6s' repeatCount='indefinite'%3E%3C/animate%3E%3C/rect%3E%3Crect x='20' y='8.64244' width='4' height='13.7151' fill='%23ff1654'%3E%3Canimate attributeName='height' attributeType='XML' values='5;21;5' begin='0.3s' dur='0.6s' repeatCount='indefinite'%3E%3C/animate%3E%3Canimate attributeName='y' attributeType='XML' values='13; 5; 13' begin='0.3s' dur='0.6s' repeatCount='indefinite'%3E%3C/animate%3E%3C/rect%3E%3C/svg%3E%0A");
+  }
 }
