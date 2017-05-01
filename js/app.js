@@ -21847,8 +21847,14 @@
 	    var _this = _possibleConstructorReturn(this, (List.__proto__ || Object.getPrototypeOf(List)).call(this, props));
 
 	    _this.state = {
-	      aptos: []
+	      aptos: [],
+	      filterOptions: {
+	        size: [],
+	        prix: []
+	      }
 	    };
+
+	    _this.updateFiltersOptions = _this.updateFiltersOptions.bind(_this);
 	    return _this;
 	  }
 
@@ -21861,7 +21867,9 @@
 	      aptosRef.once('value').then(function (snapshot) {
 
 	        snapshot.forEach(function (data) {
-	          newList.push(data.val());
+	          if (data.val().disponible) {
+	            newList.push(data.val());
+	          }
 	        });
 
 	        this.setState({ aptos: newList });
@@ -21881,9 +21889,34 @@
 	      );
 	    }
 	  }, {
+	    key: 'updateFiltersOptions',
+	    value: function updateFiltersOptions() {
+	      var size = this.state.aptos.map(function (item) {
+	        return item.type;
+	      });
+	      var prix = this.state.aptos.map(function (item) {
+	        return item.prix;
+	      });
+
+	      var sizeOptions = size.reduce(function (a, b) {
+	        if (a.indexOf(b) < 0) a.push(b);
+	        return a;
+	      }, []);
+
+	      var prixOptions = prix.reduce(function (a, b) {
+	        if (a.indexOf(b) < 0) a.push(b);
+	        return a;
+	      }, []);
+
+	      sizeOptions.unshift("");
+	      prixOptions.unshift("");
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var aptos = this.generatorList();
+	      this.updateFiltersOptions();
+
 	      return _react2.default.createElement(
 	        'section',
 	        { className: 'listAptos__section' },
@@ -21903,6 +21936,7 @@
 	              ),
 	              _react2.default.createElement('hr', { className: 'primary' })
 	            ),
+	            _react2.default.createElement('div', { className: 'col-lg-12' }),
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'col-lg-12 listAptos' },

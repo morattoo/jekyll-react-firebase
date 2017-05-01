@@ -16,10 +16,16 @@ const FirebaseReady= Firebase.initializeApp(config);
 
 class List extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      aptos: []
+      aptos: [],
+      filterOptions: {
+        size: [],
+        prix: []
+      }
     }
+
+    this.updateFiltersOptions = this.updateFiltersOptions.bind(this);
   }
 
   componentWillMount() {
@@ -29,7 +35,9 @@ class List extends Component {
     aptosRef.once('value').then(function(snapshot) {
 
       snapshot.forEach(function(data) {
-        newList.push(data.val());
+        if (data.val().disponible) {
+          newList.push(data.val());
+        }
       });
 
       this.setState({aptos: newList});
@@ -46,8 +54,28 @@ class List extends Component {
     return (<ul className="listAptos__container">{listAptos}</ul>);
   }
 
+  updateFiltersOptions() {
+    var size = this.state.aptos.map(function(item) { return item.type });
+    var prix = this.state.aptos.map(function(item) { return item.prix });
+
+    var sizeOptions = size.reduce(function(a,b) {
+      if (a.indexOf(b) < 0 ) a.push(b);
+      return a;
+    },[]);
+
+    var prixOptions = prix.reduce(function(a,b) {
+      if (a.indexOf(b) < 0 ) a.push(b);
+      return a;
+    },[]);
+
+    sizeOptions.unshift("");
+    prixOptions.unshift("");
+  }
+
   render() {
     var aptos = this.generatorList();
+    this.updateFiltersOptions();
+
     return(
       <section className="listAptos__section">
         <div className="container">
@@ -55,6 +83,9 @@ class List extends Component {
             <div className="col-lg-12 text-center">
                 <h2 className="section-heading">Nos immeubles disponible</h2>
                 <hr className="primary"/>
+            </div>
+            <div className="col-lg-12">
+
             </div>
             <div className="col-lg-12 listAptos">
               {aptos}

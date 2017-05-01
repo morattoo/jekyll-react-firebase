@@ -5,7 +5,7 @@ import ServiceItem from '../Service/ServiceItem';
 class Item extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   getDateDisplay(date) {
