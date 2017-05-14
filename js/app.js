@@ -21817,6 +21817,10 @@
 
 	var Firebase = _interopRequireWildcard(_firebase);
 
+	var _FilterOptions = __webpack_require__(318);
+
+	var _FilterOptions2 = _interopRequireDefault(_FilterOptions);
+
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -21848,17 +21852,61 @@
 
 	    _this.state = {
 	      aptos: [],
-	      filterOptions: {
-	        size: [],
-	        prix: []
+	      filtersActive: {
+	        type: ['4,1/2'],
+	        zone: ['limoilou']
 	      }
 	    };
 
 	    _this.updateFiltersOptions = _this.updateFiltersOptions.bind(_this);
+	    _this.filterByOptions = _this.filterByOptions.bind(_this);
+	    _this.changeFiltersActive = _this.changeFiltersActive.bind(_this);
 	    return _this;
 	  }
 
 	  _createClass(List, [{
+	    key: 'includedElement',
+	    value: function includedElement(value, array) {
+	      return array.includes(value);
+	    }
+	  }, {
+	    key: 'filterByOptions',
+	    value: function filterByOptions(item) {
+	      var filters = this.state.filtersActive;
+	      var inFilter = [];
+
+	      for (var property in filters) {
+	        if (filters.hasOwnProperty(property)) {
+	          inFilter.push(this.includedElement(item[property], filters[property]));
+	        }
+	      }
+
+	      var oneFalse = inFilter.some(function (x) {
+	        return x == false;
+	      });
+	      debugger;
+	      return !oneFalse;
+	    }
+	  }, {
+	    key: 'updateFiltersOptions',
+	    value: function updateFiltersOptions() {
+
+	      var filterAptos = this.state.aptos.filter(this.filterByOptions);
+	      this.setState({
+	        aptos: filterAptos
+	      });
+	    }
+	  }, {
+	    key: 'changeFiltersActive',
+	    value: function changeFiltersActive(val, type) {
+	      debugger;
+	      this.setState({
+	        filtersActive: filters
+	      });
+
+	      //this.updateFiltersOptions();
+	    }
+	  }, {
 	    key: 'componentWillMount',
 	    value: function componentWillMount() {
 
@@ -21889,33 +21937,10 @@
 	      );
 	    }
 	  }, {
-	    key: 'updateFiltersOptions',
-	    value: function updateFiltersOptions() {
-	      var size = this.state.aptos.map(function (item) {
-	        return item.type;
-	      });
-	      var prix = this.state.aptos.map(function (item) {
-	        return item.prix;
-	      });
-
-	      var sizeOptions = size.reduce(function (a, b) {
-	        if (a.indexOf(b) < 0) a.push(b);
-	        return a;
-	      }, []);
-
-	      var prixOptions = prix.reduce(function (a, b) {
-	        if (a.indexOf(b) < 0) a.push(b);
-	        return a;
-	      }, []);
-
-	      sizeOptions.unshift("");
-	      prixOptions.unshift("");
-	    }
-	  }, {
 	    key: 'render',
 	    value: function render() {
+
 	      var aptos = this.generatorList();
-	      this.updateFiltersOptions();
 
 	      return _react2.default.createElement(
 	        'section',
@@ -21936,6 +21961,7 @@
 	              ),
 	              _react2.default.createElement('hr', { className: 'primary' })
 	            ),
+	            _react2.default.createElement(_FilterOptions2.default, { actionUpdate: this.changeFiltersActive }),
 	            _react2.default.createElement('div', { className: 'col-lg-12' }),
 	            _react2.default.createElement(
 	              'div',
@@ -22009,9 +22035,6 @@
 
 	      return dateDisplay;
 	    }
-	  }, {
-	    key: 'getService',
-	    value: function getService() {}
 	  }, {
 	    key: 'getListServices',
 	    value: function getListServices(services) {
@@ -39869,6 +39892,111 @@
 	}).call(typeof global !== undefined ? global : typeof self !== undefined ? self : typeof window !== undefined ? window : {});
 	module.exports = firebase.messaging;
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ }),
+/* 318 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Filters = function (_Component) {
+	  _inherits(Filters, _Component);
+
+	  function Filters(props) {
+	    _classCallCheck(this, Filters);
+
+	    var _this = _possibleConstructorReturn(this, (Filters.__proto__ || Object.getPrototypeOf(Filters)).call(this, props));
+
+	    _this.changeOption = _this.changeOption.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(Filters, [{
+	    key: 'changeOption',
+	    value: function changeOption(e) {
+	      var val = e.target.value;
+	      var type = e.target.id;
+
+	      this.props.actionUpdate(val, type);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+
+	      var options = {
+	        typeOptions: ['1,1/2', '2,1/2', '3,1/2', '4,1/2', '5,1/2'],
+	        zoneOptions: ['limoilou', 'saint-foy']
+	      };
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'filters' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'filter-options' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'filter-option' },
+	            _react2.default.createElement(
+	              'label',
+	              null,
+	              'Grandeur'
+	            ),
+	            _react2.default.createElement(
+	              'select',
+	              { id: 'size', value: '', onChange: this.changeOption },
+	              options.typeOptions.map(function (option) {
+	                return _react2.default.createElement(
+	                  'option',
+	                  { key: option, value: option },
+	                  option
+	                );
+	              })
+	            ),
+	            _react2.default.createElement(
+	              'label',
+	              null,
+	              'Zone'
+	            ),
+	            _react2.default.createElement(
+	              'select',
+	              { id: 'zone', value: '', onChange: this.changeOption },
+	              options.zoneOptions.map(function (option) {
+	                return _react2.default.createElement(
+	                  'option',
+	                  { key: option, value: option },
+	                  option
+	                );
+	              })
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Filters;
+	}(_react.Component);
+
+	exports.default = Filters;
 
 /***/ })
 /******/ ]);

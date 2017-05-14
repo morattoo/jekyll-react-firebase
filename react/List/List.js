@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Item from '../Item/item';
 
 import * as Firebase from 'firebase';
+import FilterSection from '../FilterOptions/FilterOptions'
 
 const config = {
   apiKey: "AIzaSyBvqwkRgxV7VxsoiANdv1KX7RO3zMAYTD0",
@@ -19,13 +20,51 @@ class List extends Component {
     super(props);
     this.state = {
       aptos: [],
-      filterOptions: {
-        size: [],
-        prix: []
+      filtersActive: {
+        type: ['4,1/2'],
+        zone: ['limoilou']
       }
     }
 
     this.updateFiltersOptions = this.updateFiltersOptions.bind(this);
+    this.filterByOptions = this.filterByOptions.bind(this);
+    this.changeFiltersActive = this.changeFiltersActive.bind(this);
+  }
+
+  includedElement(value, array) {
+    return array.includes(value);
+  }
+
+  filterByOptions (item) {
+    const filters = this.state.filtersActive;
+    let inFilter = [];
+
+    for (var property in filters) {
+        if (filters.hasOwnProperty(property)) {
+          inFilter.push(this.includedElement(item[property], filters[property]));
+        }
+    }
+
+    const  oneFalse = inFilter.some(x => x == false);
+    debugger
+    return !oneFalse;
+  }
+
+  updateFiltersOptions() {
+
+    var filterAptos = this.state.aptos.filter(this.filterByOptions);
+    this.setState({
+      aptos: filterAptos
+    });
+  }
+
+  changeFiltersActive(val, type) {
+    debugger
+    this.setState({
+      filtersActive: filters
+    });
+
+    //this.updateFiltersOptions();
   }
 
   componentWillMount() {
@@ -54,27 +93,9 @@ class List extends Component {
     return (<ul className="listAptos__container">{listAptos}</ul>);
   }
 
-  updateFiltersOptions() {
-    var size = this.state.aptos.map(function(item) { return item.type });
-    var prix = this.state.aptos.map(function(item) { return item.prix });
-
-    var sizeOptions = size.reduce(function(a,b) {
-      if (a.indexOf(b) < 0 ) a.push(b);
-      return a;
-    },[]);
-
-    var prixOptions = prix.reduce(function(a,b) {
-      if (a.indexOf(b) < 0 ) a.push(b);
-      return a;
-    },[]);
-
-    sizeOptions.unshift("");
-    prixOptions.unshift("");
-  }
-
   render() {
+
     var aptos = this.generatorList();
-    this.updateFiltersOptions();
 
     return(
       <section className="listAptos__section">
@@ -84,6 +105,7 @@ class List extends Component {
                 <h2 className="section-heading">Nos immeubles disponible</h2>
                 <hr className="primary"/>
             </div>
+            <FilterSection  actionUpdate={this.changeFiltersActive}/>
             <div className="col-lg-12">
 
             </div>

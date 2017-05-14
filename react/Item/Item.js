@@ -22,10 +22,6 @@ class Item extends Component {
     return dateDisplay;
   }
 
-  getService(){
-
-  }
-
   getListServices(services) {
 
     const listServices = [];
