@@ -38,7 +38,7 @@ class Item extends Component {
   }
 
   render() {
-    const { adresse, disponible, options, prix, type, name, date} = this.props.apto;
+    const { adresse, disponible, options, prix, type, name, date, zone} = this.props.apto;
     const srcImg = "img/aptos/" + name + ".jpg";
     const displayType = type.split(",");
     const dateDisplayFormat = this.getDateDisplay(date);

@@ -21853,58 +21853,40 @@
 	    _this.state = {
 	      aptos: [],
 	      filtersActive: {
-	        type: ['4,1/2'],
-	        zone: ['limoilou']
+	        type: 'Tous',
+	        zone: 'Tous'
 	      }
 	    };
 
-	    _this.updateFiltersOptions = _this.updateFiltersOptions.bind(_this);
-	    _this.filterByOptions = _this.filterByOptions.bind(_this);
 	    _this.changeFiltersActive = _this.changeFiltersActive.bind(_this);
+	    _this.generatorList = _this.generatorList.bind(_this);
 	    return _this;
 	  }
 
 	  _createClass(List, [{
-	    key: 'includedElement',
-	    value: function includedElement(value, array) {
-	      return array.includes(value);
-	    }
-	  }, {
-	    key: 'filterByOptions',
-	    value: function filterByOptions(item) {
-	      var filters = this.state.filtersActive;
-	      var inFilter = [];
-
-	      for (var property in filters) {
-	        if (filters.hasOwnProperty(property)) {
-	          inFilter.push(this.includedElement(item[property], filters[property]));
-	        }
-	      }
-
-	      var oneFalse = inFilter.some(function (x) {
-	        return x == false;
-	      });
-	      debugger;
-	      return !oneFalse;
-	    }
-	  }, {
-	    key: 'updateFiltersOptions',
-	    value: function updateFiltersOptions() {
-
-	      var filterAptos = this.state.aptos.filter(this.filterByOptions);
-	      this.setState({
-	        aptos: filterAptos
-	      });
-	    }
-	  }, {
 	    key: 'changeFiltersActive',
-	    value: function changeFiltersActive(val, type) {
-	      debugger;
+	    value: function changeFiltersActive(filtersActived) {
 	      this.setState({
-	        filtersActive: filters
+	        filtersActive: filtersActived
+	      });
+	    }
+	  }, {
+	    key: 'generatorList',
+	    value: function generatorList() {
+
+	      var aptosFilter = this.state.aptos.filter(function (el) {
+	        return (el.type === this.state.filtersActive.type || this.state.filtersActive.type == "Tous") && (el.zone === this.state.filtersActive.zone || this.state.filtersActive.zone == "Tous");
+	      }.bind(this));
+
+	      var listAptos = aptosFilter.map(function (apto, index) {
+	        return _react2.default.createElement(_item2.default, { key: index, apto: apto });
 	      });
 
-	      //this.updateFiltersOptions();
+	      return _react2.default.createElement(
+	        'ul',
+	        { className: 'listAptos__container' },
+	        listAptos
+	      );
 	    }
 	  }, {
 	    key: 'componentWillMount',
@@ -21922,19 +21904,6 @@
 
 	        this.setState({ aptos: newList });
 	      }.bind(this));
-	    }
-	  }, {
-	    key: 'generatorList',
-	    value: function generatorList() {
-	      var listAptos = this.state.aptos.map(function (apto, index) {
-	        return _react2.default.createElement(_item2.default, { key: index, apto: apto });
-	      });
-
-	      return _react2.default.createElement(
-	        'ul',
-	        { className: 'listAptos__container' },
-	        listAptos
-	      );
 	    }
 	  }, {
 	    key: 'render',
@@ -22065,7 +22034,8 @@
 	          prix = _props$apto.prix,
 	          type = _props$apto.type,
 	          name = _props$apto.name,
-	          date = _props$apto.date;
+	          date = _props$apto.date,
+	          zone = _props$apto.zone;
 
 	      var srcImg = "img/aptos/" + name + ".jpg";
 	      var displayType = type.split(",");
@@ -39926,6 +39896,11 @@
 	    var _this = _possibleConstructorReturn(this, (Filters.__proto__ || Object.getPrototypeOf(Filters)).call(this, props));
 
 	    _this.changeOption = _this.changeOption.bind(_this);
+
+	    _this.state = {
+	      type: 'Tous',
+	      zone: 'Tous'
+	    };
 	    return _this;
 	  }
 
@@ -39934,16 +39909,32 @@
 	    value: function changeOption(e) {
 	      var val = e.target.value;
 	      var type = e.target.id;
+	      var allFilter = Object.assign({}, this.state);
 
-	      this.props.actionUpdate(val, type);
+	      switch (type) {
+	        case 'type':
+	          allFilter.type = val;
+	          break;
+	        case 'zone':
+	          allFilter.zone = val;
+	          break;
+	        default:
+	      }
+
+	      this.props.actionUpdate(allFilter);
+
+	      this.setState({
+	        type: allFilter.type,
+	        zone: allFilter.zone
+	      });
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
 
 	      var options = {
-	        typeOptions: ['1,1/2', '2,1/2', '3,1/2', '4,1/2', '5,1/2'],
-	        zoneOptions: ['limoilou', 'saint-foy']
+	        typeOptions: ['Tous', '1,1/2', '2,1/2', '3,1/2', '4,1/2', '5,1/2'],
+	        zoneOptions: ['Tous', 'limoilou', 'saint-foy']
 	      };
 
 	      return _react2.default.createElement(
@@ -39962,7 +39953,7 @@
 	            ),
 	            _react2.default.createElement(
 	              'select',
-	              { id: 'size', value: '', onChange: this.changeOption },
+	              { id: 'type', value: this.state.type, onChange: this.changeOption },
 	              options.typeOptions.map(function (option) {
 	                return _react2.default.createElement(
 	                  'option',
@@ -39978,7 +39969,7 @@
 	            ),
 	            _react2.default.createElement(
 	              'select',
-	              { id: 'zone', value: '', onChange: this.changeOption },
+	              { id: 'zone', value: this.state.zone, onChange: this.changeOption },
 	              options.zoneOptions.map(function (option) {
 	                return _react2.default.createElement(
 	                  'option',

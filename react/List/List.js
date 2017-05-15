@@ -21,50 +21,33 @@ class List extends Component {
     this.state = {
       aptos: [],
       filtersActive: {
-        type: ['4,1/2'],
-        zone: ['limoilou']
+        type: 'Tous',
+        zone: 'Tous'
       }
     }
 
-    this.updateFiltersOptions = this.updateFiltersOptions.bind(this);
-    this.filterByOptions = this.filterByOptions.bind(this);
     this.changeFiltersActive = this.changeFiltersActive.bind(this);
+    this.generatorList = this.generatorList.bind(this);
   }
 
-  includedElement(value, array) {
-    return array.includes(value);
-  }
-
-  filterByOptions (item) {
-    const filters = this.state.filtersActive;
-    let inFilter = [];
-
-    for (var property in filters) {
-        if (filters.hasOwnProperty(property)) {
-          inFilter.push(this.includedElement(item[property], filters[property]));
-        }
-    }
-
-    const  oneFalse = inFilter.some(x => x == false);
-    debugger
-    return !oneFalse;
-  }
-
-  updateFiltersOptions() {
-
-    var filterAptos = this.state.aptos.filter(this.filterByOptions);
+  changeFiltersActive(filtersActived) {
     this.setState({
-      aptos: filterAptos
+      filtersActive: filtersActived
     });
   }
 
-  changeFiltersActive(val, type) {
-    debugger
-    this.setState({
-      filtersActive: filters
+  generatorList() {
+
+    const aptosFilter = this.state.aptos.filter(function (el) {
+      return (el.type === this.state.filtersActive.type || this.state.filtersActive.type == "Tous")  &&
+             (el.zone === this.state.filtersActive.zone || this.state.filtersActive.zone == "Tous");
+    }.bind(this));
+
+    const listAptos = aptosFilter.map(function(apto, index) {
+      return(<Item key={index} apto={apto} />);
     });
 
-    //this.updateFiltersOptions();
+    return (<ul className="listAptos__container">{listAptos}</ul>);
   }
 
   componentWillMount() {
@@ -83,14 +66,6 @@ class List extends Component {
 
     }.bind(this));
 
-  }
-
-  generatorList() {
-    const listAptos = this.state.aptos.map(function(apto, index) {
-      return(<Item key={index} apto={apto} />);
-    });
-
-    return (<ul className="listAptos__container">{listAptos}</ul>);
   }
 
   render() {
