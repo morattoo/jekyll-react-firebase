@@ -22,7 +22,8 @@ class List extends Component {
       aptos: [],
       filtersActive: {
         type: 'Tous',
-        zone: 'Tous'
+        zone: 'Tous',
+        search: ''
       }
     }
 
@@ -36,11 +37,26 @@ class List extends Component {
     });
   }
 
+  filterSearch(el, val) {
+    const validation= []
+
+    for (var key in el) {
+      if (el.hasOwnProperty(key) && typeof(el[key]) == 'string') {
+        let result = el[key].indexOf(val) > -1;
+        validation.push(result);
+      }
+    }
+
+    return validation.some(x => x == true);
+  }
+
+
   generatorList() {
 
     const aptosFilter = this.state.aptos.filter(function (el) {
       return (el.type === this.state.filtersActive.type || this.state.filtersActive.type == "Tous")  &&
-             (el.zone === this.state.filtersActive.zone || this.state.filtersActive.zone == "Tous");
+             (el.zone === this.state.filtersActive.zone || this.state.filtersActive.zone == "Tous") &&
+             (this.filterSearch(el, this.state.filtersActive.search)|| this.state.filtersActive.search == "")
     }.bind(this));
 
     const listAptos = aptosFilter.map(function(apto, index) {

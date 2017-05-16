@@ -21854,7 +21854,8 @@
 	      aptos: [],
 	      filtersActive: {
 	        type: 'Tous',
-	        zone: 'Tous'
+	        zone: 'Tous',
+	        search: ''
 	      }
 	    };
 
@@ -21871,11 +21872,27 @@
 	      });
 	    }
 	  }, {
+	    key: 'filterSearch',
+	    value: function filterSearch(el, val) {
+	      var validation = [];
+
+	      for (var key in el) {
+	        if (el.hasOwnProperty(key) && typeof el[key] == 'string') {
+	          var result = el[key].indexOf(val) > -1;
+	          validation.push(result);
+	        }
+	      }
+
+	      return validation.some(function (x) {
+	        return x == true;
+	      });
+	    }
+	  }, {
 	    key: 'generatorList',
 	    value: function generatorList() {
 
 	      var aptosFilter = this.state.aptos.filter(function (el) {
-	        return (el.type === this.state.filtersActive.type || this.state.filtersActive.type == "Tous") && (el.zone === this.state.filtersActive.zone || this.state.filtersActive.zone == "Tous");
+	        return (el.type === this.state.filtersActive.type || this.state.filtersActive.type == "Tous") && (el.zone === this.state.filtersActive.zone || this.state.filtersActive.zone == "Tous") && (this.filterSearch(el, this.state.filtersActive.search) || this.state.filtersActive.search == "");
 	      }.bind(this));
 
 	      var listAptos = aptosFilter.map(function (apto, index) {
@@ -39899,7 +39916,8 @@
 
 	    _this.state = {
 	      type: 'Tous',
-	      zone: 'Tous'
+	      zone: 'Tous',
+	      search: ''
 	    };
 	    return _this;
 	  }
@@ -39918,6 +39936,9 @@
 	        case 'zone':
 	          allFilter.zone = val;
 	          break;
+	        case 'search':
+	          allFilter.search = val;
+	          break;
 	        default:
 	      }
 
@@ -39925,7 +39946,8 @@
 
 	      this.setState({
 	        type: allFilter.type,
-	        zone: allFilter.zone
+	        zone: allFilter.zone,
+	        search: allFilter.search
 	      });
 	    }
 	  }, {
@@ -39942,7 +39964,7 @@
 	        { className: 'filters' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'filter-options' },
+	          { className: 'filter__options' },
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'filter-option' },
@@ -39961,7 +39983,11 @@
 	                  option
 	                );
 	              })
-	            ),
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'filter-option' },
 	            _react2.default.createElement(
 	              'label',
 	              null,
@@ -39978,6 +40004,16 @@
 	                );
 	              })
 	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'filter-option' },
+	            _react2.default.createElement(
+	              'label',
+	              null,
+	              'Search'
+	            ),
+	            _react2.default.createElement('input', { id: 'search', name: 'search', value: this.state.search, onChange: this.changeOption })
 	          )
 	        )
 	      );

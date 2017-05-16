@@ -8,7 +8,8 @@ class Filters extends Component {
 
     this.state = {
       type: 'Tous',
-      zone: 'Tous'
+      zone: 'Tous',
+      search: ''
     }
   }
 
@@ -24,6 +25,9 @@ class Filters extends Component {
       case 'zone':
         allFilter.zone = val;
         break;
+      case 'search':
+        allFilter.search = val;
+        break;
       default:
     }
 
@@ -31,7 +35,8 @@ class Filters extends Component {
 
     this.setState ({
       type: allFilter.type,
-      zone: allFilter.zone
+      zone: allFilter.zone,
+      search: allFilter.search
     });
   }
 
@@ -44,7 +49,7 @@ class Filters extends Component {
 
     return(
       <div className="filters">
-        <div className="filter-options">
+        <div className="filter__options">
           <div className="filter-option">
             <label>Grandeur</label>
             <select id="type" value={this.state.type} onChange={this.changeOption}>
@@ -52,12 +57,18 @@ class Filters extends Component {
               return ( <option key={option} value={option}>{option}</option> )
             })}
             </select>
+          </div>
+          <div className="filter-option">
             <label>Zone</label>
             <select id="zone" value={this.state.zone} onChange={this.changeOption}>
             {options.zoneOptions.map(function(option) {
               return ( <option key={option} value={option}>{option}</option> )
             })}
             </select>
+          </div>
+          <div className="filter-option">
+            <label>Search</label>
+            <input id="search" name="search" value={this.state.search} onChange={this.changeOption}/>
           </div>
         </div>
       </div>
