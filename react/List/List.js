@@ -96,9 +96,8 @@ class List extends Component {
                 <h2 className="section-heading">Nos immeubles disponible</h2>
                 <hr className="primary"/>
             </div>
-            <FilterSection  actionUpdate={this.changeFiltersActive}/>
             <div className="col-lg-12">
-
+              <FilterSection  actionUpdate={this.changeFiltersActive}/>
             </div>
             <div className="col-lg-12 listAptos">
               {aptos}

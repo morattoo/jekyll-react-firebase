@@ -21947,8 +21947,11 @@
 	              ),
 	              _react2.default.createElement('hr', { className: 'primary' })
 	            ),
-	            _react2.default.createElement(_FilterOptions2.default, { actionUpdate: this.changeFiltersActive }),
-	            _react2.default.createElement('div', { className: 'col-lg-12' }),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'col-lg-12' },
+	              _react2.default.createElement(_FilterOptions2.default, { actionUpdate: this.changeFiltersActive })
+	            ),
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'col-lg-12 listAptos' },
@@ -39964,10 +39967,10 @@
 	        { className: 'filters' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'filter__options' },
+	          { className: 'filters__list' },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'filter-option' },
+	            { className: 'filters__item' },
 	            _react2.default.createElement(
 	              'label',
 	              null,
@@ -39987,7 +39990,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'filter-option' },
+	            { className: 'filters__item' },
 	            _react2.default.createElement(
 	              'label',
 	              null,
@@ -40007,7 +40010,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'filter-option' },
+	            { className: 'filters__item' },
 	            _react2.default.createElement(
 	              'label',
 	              null,

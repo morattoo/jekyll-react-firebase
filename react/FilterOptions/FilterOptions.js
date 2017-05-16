@@ -49,8 +49,8 @@ class Filters extends Component {
 
     return(
       <div className="filters">
-        <div className="filter__options">
-          <div className="filter-option">
+        <div className="filters__list">
+          <div className="filters__item">
             <label>Grandeur</label>
             <select id="type" value={this.state.type} onChange={this.changeOption}>
             {options.typeOptions.map(function(option) {
@@ -58,7 +58,7 @@ class Filters extends Component {
             })}
             </select>
           </div>
-          <div className="filter-option">
+          <div className="filters__item">
             <label>Zone</label>
             <select id="zone" value={this.state.zone} onChange={this.changeOption}>
             {options.zoneOptions.map(function(option) {
@@ -66,7 +66,7 @@ class Filters extends Component {
             })}
             </select>
           </div>
-          <div className="filter-option">
+          <div className="filters__item">
             <label>Search</label>
             <input id="search" name="search" value={this.state.search} onChange={this.changeOption}/>
           </div>
