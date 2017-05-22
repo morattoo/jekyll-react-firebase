@@ -6,8 +6,66 @@
 <body id="page-top">
   {% include nav.html %}
 
+  <section class="listAptos__section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Nos immeubles Comercial disponible</h2>
+            <hr class="primary"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <ul class="commercialList">
+            <li class="commercialList__item">
+              <div class="commercialList__itemWrapper">
+                <span class="commercialList__prix">$1050 <span>(par mois)</span></span>
+                <div class="commercialList__img">
+                  <img src="img/commercial/commercial-1.jpg" alt="">
+                </div>
+                <div class="commercialList__info">
+                  <p class="commercialList__adresse">Ch de la Canardière</p>
+                  <p class="commercialList__disponible">Disponible: inmmediatement</p>
+                  <p class="commercialList__description">
+                    Bénéficiant d'une visibilité exceptionnelle, quartier dynamique dans un secteur achalandé et à proximité du Boulevard Henry-Bourassa et de l’hôpital Enfant Jésus. Plusieurs possibilités À VOIR.
+                    Près de toutes les commodités : école, épicerie, pharmacie, accès
+                  </p>
+                  <p class="commercialList__services">Non chauffé – non éclairé</p>
+                </div>
+              </div>
+              <div class="commercialList__map" id="map"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   {% include contact.html %}
   {% include scripts.html %}
+  <script>
+
+      function initMap() {
+        var myLatLng = {lat: 46.8375045, lng: -71.2229255};
+
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: myLatLng,
+          scrollwheel: false,
+          zoom: 16
+        });
+
+        // Create a marker and set its position.
+        var marker = new google.maps.Marker({
+          map: map,
+          position: myLatLng,
+          title: 'Hello World!'
+        });
+      }
+
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGtFUyBvgCeWqor1thKw_eUsajftFEBoU&callback=initMap"
+      async defer></script>
 </body>
 
 </html>
