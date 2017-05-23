@@ -21943,7 +21943,7 @@
 	              _react2.default.createElement(
 	                'h2',
 	                { className: 'section-heading' },
-	                'Nos immeubles disponible'
+	                'Nos immeubles disponibles'
 	              ),
 	              _react2.default.createElement('hr', { className: 'primary' })
 	            ),
@@ -38000,7 +38000,7 @@
 	      }
 	      return _react2.default.createElement(
 	        "li",
-	        { className: "listAptos__serviceItem" },
+	        { className: "listAptos__serviceItem", "data-tooltip": this.props.service },
 	        _react2.default.createElement("i", { className: className, "aria-hidden": "true" })
 	      );
 	    }

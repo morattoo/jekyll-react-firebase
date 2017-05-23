@@ -24,7 +24,7 @@ class ServiceItem extends Component {
         break;
       default:
     }
-    return(<li className="listAptos__serviceItem"><i className={className} aria-hidden="true"></i></li>);
+    return(<li className="listAptos__serviceItem" data-tooltip={this.props.service}><i className={className} aria-hidden="true"></i></li>);
   }
 }
 

@@ -93,7 +93,7 @@ class List extends Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">
-                <h2 className="section-heading">Nos immeubles disponible</h2>
+                <h2 className="section-heading">Nos immeubles disponibles</h2>
                 <hr className="primary"/>
             </div>
             <div className="col-lg-12">
