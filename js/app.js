@@ -21832,12 +21832,12 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var config = {
-	  apiKey: "AIzaSyBvqwkRgxV7VxsoiANdv1KX7RO3zMAYTD0",
-	  authDomain: "developgestion.firebaseapp.com",
-	  databaseURL: "https://developgestion.firebaseio.com",
-	  projectId: "developgestion",
-	  storageBucket: "developgestion.appspot.com",
-	  messagingSenderId: "1013072931380"
+	  apiKey: "AIzaSyBzKbxj-T2dlOPvWOBfEu39j7XA0KhO7wA",
+	  authDomain: "gestion-oceanne-inc.firebaseapp.com",
+	  databaseURL: "https://gestion-oceanne-inc.firebaseio.com",
+	  projectId: "gestion-oceanne-inc",
+	  storageBucket: "gestion-oceanne-inc.appspot.com",
+	  messagingSenderId: "269281510493"
 	};
 
 	var FirebaseReady = Firebase.initializeApp(config);

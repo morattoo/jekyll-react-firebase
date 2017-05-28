@@ -5,12 +5,12 @@ import * as Firebase from 'firebase';
 import FilterSection from '../FilterOptions/FilterOptions'
 
 const config = {
-  apiKey: "AIzaSyBvqwkRgxV7VxsoiANdv1KX7RO3zMAYTD0",
-  authDomain: "developgestion.firebaseapp.com",
-  databaseURL: "https://developgestion.firebaseio.com",
-  projectId: "developgestion",
-  storageBucket: "developgestion.appspot.com",
-  messagingSenderId: "1013072931380"
+  apiKey: "AIzaSyBzKbxj-T2dlOPvWOBfEu39j7XA0KhO7wA",
+  authDomain: "gestion-oceanne-inc.firebaseapp.com",
+  databaseURL: "https://gestion-oceanne-inc.firebaseio.com",
+  projectId: "gestion-oceanne-inc",
+  storageBucket: "gestion-oceanne-inc.appspot.com",
+  messagingSenderId: "269281510493"
 };
 
 const FirebaseReady= Firebase.initializeApp(config);
