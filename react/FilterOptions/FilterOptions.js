@@ -44,7 +44,7 @@ class Filters extends Component {
 
     const options = {
       typeOptions: ['Tous', '1,1/2', '2,1/2', '3,1/2', '4,1/2', '5,1/2'],
-      zoneOptions: ['Tous', 'limoilou', 'saint-foy'],
+      zoneOptions: ['Tous', 'limoilou', 'saint-foy', 'beauport', 'cap-rouge'],
     }
 
     return(

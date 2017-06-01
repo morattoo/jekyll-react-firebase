@@ -63,6 +63,7 @@ p {
 
 .text-faded {
     color: rgba(white, .7);
+    font-weight: 100;
 }
 
 section {
@@ -100,6 +101,10 @@ aside {
     h2 {
         margin: 0 auto 20px;
     }
+
+    .wrapperButtons {
+      text-align: center;
+    }
 }
 
 // Bootstrap Overrides
@@ -115,6 +120,10 @@ aside {
 // Button Styles
 .btn-default {
     @include button-variant($theme-dark, white, white);
+}
+
+.btn-default--margin-left {
+  margin-left: 20px;
 }
 
 .btn-primary {
