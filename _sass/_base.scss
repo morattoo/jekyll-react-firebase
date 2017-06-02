@@ -103,7 +103,25 @@ aside {
     }
 
     .wrapperButtons {
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      @media (min-width: 600px) {
+          flex-direction: row;
+      }
+
+      .btn-default {
+        &:last-child {
+
+          margin: 20px 0 0 0;
+          @media (min-width: 600px) {
+            margin: 0 0 0 20px;
+          }
+        }
+      }
+
     }
 }
 
@@ -145,7 +163,6 @@ aside {
 // Contact
 #contact .fa {
     color: $theme-dark;
-    font-size: 4em;
 }
 
 // Extras
