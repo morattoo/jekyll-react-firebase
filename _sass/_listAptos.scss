@@ -83,6 +83,11 @@
   border: 1px solid $border-gray;
   padding: 5px;
   border-radius: 2px;
+
+  &.inactive {
+    color: #ccc;
+    fill: #ccc;
+  }
 }
 
 /**

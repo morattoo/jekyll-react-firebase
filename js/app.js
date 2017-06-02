@@ -22032,9 +22032,7 @@
 
 	      for (var prop in services) {
 	        if (services.hasOwnProperty(prop)) {
-	          if (services[prop]) {
-	            listServices.push(_react2.default.createElement(_ServiceItem2.default, { key: prop, service: prop }));
-	          }
+	          listServices.push(_react2.default.createElement(_ServiceItem2.default, { key: prop, name: prop, active: services[prop] }));
 	        }
 	      }
 
@@ -22115,7 +22113,7 @@
 	            _react2.default.createElement(
 	              'span',
 	              { className: 'listAptos__title' },
-	              'Include:'
+	              'SERVICES:'
 	            ),
 	            listServices
 	          )
@@ -37982,26 +37980,35 @@
 	    key: "render",
 	    value: function render() {
 
-	      var className = "";
-	      switch (this.props.service) {
+	      var classNameIcon = "";
+	      var displayName = "";
+
+	      switch (this.props.name) {
 	        case "chauffe":
-	          className = "fa fa-thermometer-three-quarters";
+	          classNameIcon = "fa fa-thermometer-three-quarters";
+	          displayName = this.props.active ? "Chauffé" : "Non chauffé";
 	          break;
 	        case "eau-chaude":
-	          className = "fa fa-bath";
+	          classNameIcon = "fa fa-bath";
+	          displayName = this.props.active ? "Eau chaude" : "Non eau chaude";
 	          break;
 	        case "eclaire":
-	          className = "fa fa-lightbulb-o";
+	          classNameIcon = "fa fa-lightbulb-o";
+	          displayName = this.props.active ? "Éclairé" : "Non éclairé";
 	          break;
 	        case "semi-meuble":
-	          className = "fa fa-bed";
+	          classNameIcon = "fa fa-bed";
+	          displayName = this.props.active ? "Semi-meublé" : "Non semi-meublé";
 	          break;
 	        default:
 	      }
+
+	      var classNameItem = this.props.active ? "listAptos__serviceItem" : "listAptos__serviceItem inactive";
+
 	      return _react2.default.createElement(
 	        "li",
-	        { className: "listAptos__serviceItem", "data-tooltip": this.props.service },
-	        _react2.default.createElement("i", { className: className, "aria-hidden": "true" })
+	        { className: classNameItem, "data-tooltip": displayName },
+	        _react2.default.createElement("i", { className: classNameIcon, "aria-hidden": "true" })
 	      );
 	    }
 	  }]);

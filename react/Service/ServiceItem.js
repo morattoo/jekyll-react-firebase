@@ -8,23 +8,34 @@ class ServiceItem extends Component {
 
   render() {
 
-    let className = "";
-    switch (this.props.service) {
+    let classNameIcon = "";
+    let displayName = "";
+
+    switch (this.props.name) {
       case "chauffe":
-        className="fa fa-thermometer-three-quarters";
+        classNameIcon="fa fa-thermometer-three-quarters";
+        displayName = this.props.active ? "Chauffé" : "Non chauffé";
         break;
       case "eau-chaude":
-        className="fa fa-bath";
+        classNameIcon="fa fa-bath";
+        displayName = this.props.active ? "Eau chaude" : "Non eau chaude";
         break;
       case "eclaire":
-        className="fa fa-lightbulb-o";
+        classNameIcon="fa fa-lightbulb-o";
+        displayName = this.props.active ? "Éclairé" : "Non éclairé";
         break;
       case "semi-meuble":
-        className="fa fa-bed";
+        classNameIcon="fa fa-bed";
+        displayName = this.props.active ? "Semi-meublé" : "Non semi-meublé";
         break;
       default:
     }
-    return(<li className="listAptos__serviceItem" data-tooltip={this.props.service}><i className={className} aria-hidden="true"></i></li>);
+
+    const classNameItem = this.props.active ? "listAptos__serviceItem" : "listAptos__serviceItem inactive";
+
+    return(<li className={classNameItem} data-tooltip={displayName}>
+              <i className={classNameIcon} aria-hidden="true"></i>
+            </li>);
   }
 }
 

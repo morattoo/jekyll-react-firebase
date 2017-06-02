@@ -28,9 +28,7 @@ class Item extends Component {
 
     for (var prop in services) {
       if (services.hasOwnProperty(prop)) {
-        if(services[prop]) {
-          listServices.push(<ServiceItem key={prop} service={prop}/>);
-        }
+          listServices.push(<ServiceItem key={prop} name={prop} active={services[prop]}/>);
       }
     }
 
@@ -54,7 +52,7 @@ class Item extends Component {
         <p className="listAptos__adresse">{adresse}</p>
         <p className="listAptos__date">Disponible, <b>{dateDisplayFormat}</b></p>
         <div className="listAptos__wrapperService">
-          <span className="listAptos__title">Include:</span>
+          <span className="listAptos__title">SERVICES:</span>
           {listServices}
         </div>
       </div>
