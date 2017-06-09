@@ -6,6 +6,7 @@ class Item extends Component {
 
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   getDateDisplay(date) {
@@ -35,6 +36,10 @@ class Item extends Component {
     return (<ul className="listAptos__services">{listServices}</ul>);
   }
 
+  handleClick() {
+    this.props.actionOverlay(this.props.apto);
+  }
+
   render() {
     const { adresse, disponible, options, prix, type, name, date, zone} = this.props.apto;
     const srcImg = "img/aptos/" + name + ".jpg";
@@ -42,7 +47,7 @@ class Item extends Component {
     const dateDisplayFormat = this.getDateDisplay(date);
     const listServices = this.getListServices(options);
 
-    return(<li className="listAptos__item">
+    return(<li className="listAptos__item" onClick={this.handleClick}>
       <div className="listAptos__wrapper">
         <img src={srcImg} alt="" className="listAptos__img"/>
         <div className="listAptos__info">

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Item from '../Item/item';
+import Overlay from '../OverlayDescription/Overlay';
 
 import * as Firebase from 'firebase';
 import FilterSection from '../FilterOptions/FilterOptions'
@@ -24,11 +25,15 @@ class List extends Component {
         type: 'Tous',
         zone: 'Tous',
         search: ''
-      }
+      },
+      overlay: false,
+      showApto: ""
     }
 
     this.changeFiltersActive = this.changeFiltersActive.bind(this);
     this.generatorList = this.generatorList.bind(this);
+    this.activeOverlay = this.activeOverlay.bind(this);
+    this.removeOverlay = this.removeOverlay.bind(this);
   }
 
   changeFiltersActive(filtersActived) {
@@ -60,8 +65,8 @@ class List extends Component {
     }.bind(this));
 
     const listAptos = aptosFilter.map(function(apto, index) {
-      return(<Item key={index} apto={apto} />);
-    });
+      return(<Item key={index} apto={apto} actionOverlay={this.activeOverlay}/>);
+    }.bind(this));
 
     return (<ul className="listAptos__container">{listAptos}</ul>);
   }
@@ -84,12 +89,37 @@ class List extends Component {
 
   }
 
+  activeOverlay(apto) {
+    console.log(apto);
+    this.setState({
+      overlay: true,
+      showApto: apto
+    });
+  }
+
+  removeOverlay() {
+    this.setState({
+      overlay: false,
+      showApto: ""
+    });
+  }
+
+  getOverlay() {
+    return(
+      <Overlay closeOverlay={this.removeOverlay}>
+        <div>{this.state.showApto}</div>
+      </Overlay>
+    )
+  }
+
   render() {
 
     var aptos = this.generatorList();
+    var overlay = this.state.overlay ? this.getOverlay() : null;
 
     return(
       <section className="listAptos__section">
+        {overlay}
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">

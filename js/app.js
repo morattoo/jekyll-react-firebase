@@ -21813,6 +21813,10 @@
 
 	var _item2 = _interopRequireDefault(_item);
 
+	var _Overlay = __webpack_require__(320);
+
+	var _Overlay2 = _interopRequireDefault(_Overlay);
+
 	var _firebase = __webpack_require__(304);
 
 	var Firebase = _interopRequireWildcard(_firebase);
@@ -21856,11 +21860,15 @@
 	        type: 'Tous',
 	        zone: 'Tous',
 	        search: ''
-	      }
+	      },
+	      overlay: false,
+	      showApto: ""
 	    };
 
 	    _this.changeFiltersActive = _this.changeFiltersActive.bind(_this);
 	    _this.generatorList = _this.generatorList.bind(_this);
+	    _this.activeOverlay = _this.activeOverlay.bind(_this);
+	    _this.removeOverlay = _this.removeOverlay.bind(_this);
 	    return _this;
 	  }
 
@@ -21896,8 +21904,8 @@
 	      }.bind(this));
 
 	      var listAptos = aptosFilter.map(function (apto, index) {
-	        return _react2.default.createElement(_item2.default, { key: index, apto: apto });
-	      });
+	        return _react2.default.createElement(_item2.default, { key: index, apto: apto, actionOverlay: this.activeOverlay });
+	      }.bind(this));
 
 	      return _react2.default.createElement(
 	        'ul',
@@ -21923,14 +21931,46 @@
 	      }.bind(this));
 	    }
 	  }, {
+	    key: 'activeOverlay',
+	    value: function activeOverlay(apto) {
+	      console.log(apto);
+	      this.setState({
+	        overlay: true,
+	        showApto: apto
+	      });
+	    }
+	  }, {
+	    key: 'removeOverlay',
+	    value: function removeOverlay() {
+	      this.setState({
+	        overlay: false,
+	        showApto: ""
+	      });
+	    }
+	  }, {
+	    key: 'getOverlay',
+	    value: function getOverlay() {
+	      return _react2.default.createElement(
+	        _Overlay2.default,
+	        { closeOverlay: this.removeOverlay },
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          this.state.showApto
+	        )
+	      );
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 
 	      var aptos = this.generatorList();
+	      var overlay = this.state.overlay ? this.getOverlay() : null;
 
 	      return _react2.default.createElement(
 	        'section',
 	        { className: 'listAptos__section' },
+	        overlay,
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'container' },
@@ -22006,7 +22046,10 @@
 	  function Item(props) {
 	    _classCallCheck(this, Item);
 
-	    return _possibleConstructorReturn(this, (Item.__proto__ || Object.getPrototypeOf(Item)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (Item.__proto__ || Object.getPrototypeOf(Item)).call(this, props));
+
+	    _this.handleClick = _this.handleClick.bind(_this);
+	    return _this;
 	  }
 
 	  _createClass(Item, [{
@@ -22043,6 +22086,11 @@
 	      );
 	    }
 	  }, {
+	    key: 'handleClick',
+	    value: function handleClick() {
+	      this.props.actionOverlay(this.props.apto);
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _props$apto = this.props.apto,
@@ -22062,7 +22110,7 @@
 
 	      return _react2.default.createElement(
 	        'li',
-	        { className: 'listAptos__item' },
+	        { className: 'listAptos__item', onClick: this.handleClick },
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'listAptos__wrapper' },
@@ -40034,6 +40082,64 @@
 	}(_react.Component);
 
 	exports.default = Filters;
+
+/***/ }),
+/* 319 */,
+/* 320 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Overlay = function (_Component) {
+	  _inherits(Overlay, _Component);
+
+	  function Overlay(props) {
+	    _classCallCheck(this, Overlay);
+
+	    var _this = _possibleConstructorReturn(this, (Overlay.__proto__ || Object.getPrototypeOf(Overlay)).call(this, props));
+
+	    _this.handleClick = _this.handleClick.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(Overlay, [{
+	    key: "handleClick",
+	    value: function handleClick() {
+	      this.props.closeOverlay();
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "overlay", onClick: this.handleClick },
+	        _react2.default.createElement("div", { className: "wrapperCenter" })
+	      );
+	    }
+	  }]);
+
+	  return Overlay;
+	}(_react.Component);
+
+	exports.default = Overlay;
 
 /***/ })
 /******/ ]);
