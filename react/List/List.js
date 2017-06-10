@@ -90,7 +90,6 @@ class List extends Component {
   }
 
   activeOverlay(apto) {
-    console.log(apto);
     this.setState({
       overlay: true,
       showApto: apto
@@ -106,8 +105,8 @@ class List extends Component {
 
   getOverlay() {
     return(
-      <Overlay closeOverlay={this.removeOverlay}>
-        <div>{this.state.showApto}</div>
+      <Overlay key={"overlay"} closeOverlay={this.removeOverlay}>
+
       </Overlay>
     )
   }

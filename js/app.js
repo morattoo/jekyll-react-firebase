@@ -21933,7 +21933,6 @@
 	  }, {
 	    key: 'activeOverlay',
 	    value: function activeOverlay(apto) {
-	      console.log(apto);
 	      this.setState({
 	        overlay: true,
 	        showApto: apto
@@ -21950,15 +21949,7 @@
 	  }, {
 	    key: 'getOverlay',
 	    value: function getOverlay() {
-	      return _react2.default.createElement(
-	        _Overlay2.default,
-	        { closeOverlay: this.removeOverlay },
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          this.state.showApto
-	        )
-	      );
+	      return _react2.default.createElement(_Overlay2.default, { key: "overlay", closeOverlay: this.removeOverlay });
 	    }
 	  }, {
 	    key: 'render',
@@ -40122,8 +40113,10 @@
 
 	  _createClass(Overlay, [{
 	    key: "handleClick",
-	    value: function handleClick() {
-	      this.props.closeOverlay();
+	    value: function handleClick(ev) {
+	      if (ev.target.className == "overlay") {
+	        this.props.closeOverlay();
+	      }
 	    }
 	  }, {
 	    key: "render",

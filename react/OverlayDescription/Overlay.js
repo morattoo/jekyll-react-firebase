@@ -8,8 +8,11 @@ class Overlay extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
-    this.props.closeOverlay();
+  handleClick(ev) {
+    if (ev.target.className == "overlay") {
+      this.props.closeOverlay();
+    }
+
   }
 
   render() {
