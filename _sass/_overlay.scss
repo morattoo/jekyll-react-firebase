@@ -11,13 +11,17 @@
   justify-content: center;
 }
 
-
 .wrapperCenter {
   flex-grow: 1;
   flex-shrink: 1;
   width: 70%;
   height: 70%;
   max-width: 500px;
-  background: red;
+  background: #FFF;
   z-index: 23;
+  padding: 5px;
+
+  .image-gallery {
+    padding: 0;
+  }
 }
