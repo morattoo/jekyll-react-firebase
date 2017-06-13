@@ -19,9 +19,21 @@
   max-width: 500px;
   background: #FFF;
   z-index: 23;
-  padding: 5px;
+  padding: 10px;
+  position: relative;
 
   .image-gallery {
     padding: 0;
   }
+}
+
+.wrapperCenter__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, .4);
+  border: none;
+  color: #fff;
+  z-index: 1;
+  outline: none;
 }

@@ -38093,16 +38093,22 @@
 
 	    var _this = _possibleConstructorReturn(this, (Overlay.__proto__ || Object.getPrototypeOf(Overlay)).call(this, props));
 
-	    _this.handleClick = _this.handleClick.bind(_this);
+	    _this.OutSideHandleClick = _this.OutSideHandleClick.bind(_this);
+	    _this.handleButtonClick = _this.handleButtonClick.bind(_this);
 	    return _this;
 	  }
 
 	  _createClass(Overlay, [{
-	    key: 'handleClick',
-	    value: function handleClick(ev) {
+	    key: 'OutSideHandleClick',
+	    value: function OutSideHandleClick(ev) {
 	      if (ev.target.className == "overlay") {
 	        this.props.closeOverlay();
 	      }
+	    }
+	  }, {
+	    key: 'handleButtonClick',
+	    value: function handleButtonClick() {
+	      this.props.closeOverlay();
 	    }
 	  }, {
 	    key: 'mapingGallery',
@@ -38126,10 +38132,15 @@
 
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'overlay', onClick: this.handleClick },
+	        { className: 'overlay', onClick: this.OutSideHandleClick },
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'wrapperCenter' },
+	          _react2.default.createElement(
+	            'button',
+	            { className: 'wrapperCenter__close', onClick: this.handleButtonClick },
+	            'x'
+	          ),
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'gallery' },

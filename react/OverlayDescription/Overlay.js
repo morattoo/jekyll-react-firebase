@@ -6,14 +6,18 @@ class Overlay extends Component {
   constructor(props) {
     super(props);
 
-    this.handleClick = this.handleClick.bind(this);
+    this.OutSideHandleClick = this.OutSideHandleClick.bind(this);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
-  handleClick(ev) {
+  OutSideHandleClick(ev) {
     if (ev.target.className == "overlay") {
       this.props.closeOverlay();
     }
+  }
 
+  handleButtonClick() {
+    this.props.closeOverlay();
   }
 
   mapingGallery () {
@@ -33,8 +37,9 @@ class Overlay extends Component {
 
     const galleryImages =  this.mapingGallery();
 
-    return(<div className="overlay" onClick={this.handleClick}>
+    return(<div className="overlay" onClick={this.OutSideHandleClick}>
           <div className="wrapperCenter">
+            <button className="wrapperCenter__close" onClick={this.handleButtonClick}>x</button>
             <div className="gallery">
               <ImageGallery items={galleryImages} slideInterval={2000}/>
             </div>
