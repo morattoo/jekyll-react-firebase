@@ -104,11 +104,7 @@ class List extends Component {
   }
 
   getOverlay() {
-    return(
-      <Overlay key={"overlay"} closeOverlay={this.removeOverlay}>
-
-      </Overlay>
-    )
+    return(<Overlay key={"overlay"} closeOverlay={this.removeOverlay} showApto={this.state.showApto}/>);
   }
 
   render() {

@@ -21949,7 +21949,7 @@
 	  }, {
 	    key: 'getOverlay',
 	    value: function getOverlay() {
-	      return _react2.default.createElement(_Overlay2.default, { key: "overlay", closeOverlay: this.removeOverlay });
+	      return _react2.default.createElement(_Overlay2.default, { key: "overlay", closeOverlay: this.removeOverlay, showApto: this.state.showApto });
 	    }
 	  }, {
 	    key: 'render',
@@ -38129,22 +38129,57 @@
 	    value: function render() {
 
 	      var galleryImages = this.mapingGallery();
+	      var _props$showApto = this.props.showApto,
+	          adresse = _props$showApto.adresse,
+	          disponible = _props$showApto.disponible,
+	          options = _props$showApto.options,
+	          prix = _props$showApto.prix,
+	          type = _props$showApto.type,
+	          name = _props$showApto.name,
+	          date = _props$showApto.date,
+	          zone = _props$showApto.zone,
+	          description = _props$showApto.description;
+
 
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'overlay', onClick: this.OutSideHandleClick },
 	        _react2.default.createElement(
+	          'button',
+	          { className: 'wrapperCenter__close', onClick: this.handleButtonClick },
+	          _react2.default.createElement(
+	            'svg',
+	            { xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 64 64' },
+	            _react2.default.createElement('path', { fill: '#fff', d: 'M28.94 31.786L.614 60.114c-.787.787-.787 2.062 0 2.85.393.393.91.59 1.424.59.516 0 1.03-.197 1.424-.59l28.54-28.544 28.54 28.54c.396.395.91.59 1.426.59s1.03-.195 1.424-.59c.788-.786.788-2.06 0-2.848L35.065 31.786 63.41 3.438c.787-.787.787-2.062 0-2.85-.787-.785-2.062-.785-2.848 0L32.002 29.15 3.442.59C2.653-.196 1.38-.196.59.59c-.786.787-.786 2.062 0 2.85l28.35 28.346z' })
+	          )
+	        ),
+	        _react2.default.createElement(
 	          'div',
 	          { className: 'wrapperCenter' },
 	          _react2.default.createElement(
-	            'button',
-	            { className: 'wrapperCenter__close', onClick: this.handleButtonClick },
-	            'x'
+	            'div',
+	            { className: 'wrapperRow' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'gallery' },
+	              _react2.default.createElement(_reactImageGallery2.default, { items: galleryImages, slideInterval: 2000 })
+	            ),
+	            _react2.default.createElement('div', { className: 'mapGoogle' })
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'gallery' },
-	            _react2.default.createElement(_reactImageGallery2.default, { items: galleryImages, slideInterval: 2000 })
+	            { className: 'showApto__prix' },
+	            prix
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'showApto__type' },
+	            type
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'showApto__description' },
+	            description
 	          )
 	        )
 	      );

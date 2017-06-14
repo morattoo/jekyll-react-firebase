@@ -1,0 +1,293 @@
+{
+  "aptos" : {
+    "26emerue-1" : {
+      "adresse" : "150-160 26ème rue",
+      "date" : "2017-07-01",
+      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "disponible" : true,
+      "name" : "26emerue-1",
+      "options" : {
+        "chauffe" : true,
+        "eau-chaude" : false,
+        "eclaire" : false,
+        "semi-meuble" : false
+      },
+      "prix" : 785,
+      "type" : "4,1/2",
+      "zone" : "limoilou",
+      "location" : "46.835434,-71.2431831"
+    },
+    "Le3025-1" : {
+      "adresse" : "3025 chemin Ste-Foy",
+      "date" : "2017-02-23",
+      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "disponible" : true,
+      "name" : "le3025-1",
+      "options" : {
+        "chauffe" : true,
+        "eau-chaude" : true,
+        "eclaire" : true,
+        "semi-meuble" : true
+      },
+      "prix" : 595,
+      "type" : "1,1/2",
+      "zone" : "saint-foy",
+      "location": "46.7756617,-71.3122461"
+    },
+    "canardiere-1" : {
+      "adresse" : "1689 ch de la Canardière",
+      "date" : "2017-07-01",
+      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "disponible" : false,
+      "name" : "canardiere-1",
+      "options" : {
+        "chauffe" : false,
+        "eau-chaude" : false,
+        "eclaire" : false,
+        "semi-meuble" : true
+      },
+      "prix" : 600,
+      "type" : "2,1/2",
+      "zone" : "limoilou",
+      "location": "46.8375045,-71.2245657"
+    },
+    "jeanneMance-1" : {
+      "adresse" : "1720-1722 Avenue Jeanne-Mance",
+      "date" : "2017-06-01",
+      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "disponible" : true,
+      "name" : "jeanneMance-1",
+      "options" : {
+        "chauffe" : false,
+        "eau-chaude" : false,
+        "eclaire" : false,
+        "semi-meuble" : false
+      },
+      "prix" : 565,
+      "type" : "3,1/2",
+      "zone" : "limoilou",
+      "location": "46.8282589,-71.2434129"
+    },
+    "la18emerue-1" : {
+      "adresse" : "188 Eugène de la montagne, Limoilou.",
+      "date" : "2017-05-01",
+      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "disponible" : true,
+      "name" : "la18emerue-1",
+      "options" : {
+        "chauffe" : true,
+        "eau-chaude" : true,
+        "eclaire" : true,
+        "semi-meuble" : true
+      },
+      "prix" : 630,
+      "type" : "3,1/2",
+      "zone" : "limoilou",
+      "location": "46.827922,-71.2461682"
+    },
+    "le3025-2" : {
+      "adresse" : "3025 chemin Ste-Foy",
+      "date" : "2017-08-01",
+      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "disponible" : false,
+      "name" : "le3025-2",
+      "options" : {
+        "chauffe" : true,
+        "eau-chaude" : true,
+        "eclaire" : true,
+        "semi-meuble" : true
+      },
+      "prix" : 590,
+      "type" : "2,1/2",
+      "zone" : "saint-foy",
+      "location": "46.7756617,-71.3122461"
+    },
+    "le3025-3" : {
+      "adresse" : "3025 chemin Ste-Foy",
+      "date" : "2017-08-01",
+      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "disponible" : true,
+      "name" : "le3025-3",
+      "options" : {
+        "chauffe" : true,
+        "eau-chaude" : true,
+        "eclaire" : true,
+        "semi-meuble" : true
+      },
+      "prix" : 690,
+      "type" : "3,1/2",
+      "zone" : "saint-foy",
+      "location": "46.7756617,-71.3122461"
+    },
+    "mont-thabor-1" : {
+      "adresse" : "2340 Av du Mont-Thabor",
+      "date" : "2017-06-01",
+      "description" : "Semi-meublé. Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc. Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "disponible" : true,
+      "name" : "mont-thabor-1",
+      "options" : {
+        "chauffe" : true,
+        "eau-chaude" : true,
+        "eclaire" : true,
+        "semi-meuble" : true
+      },
+      "prix" : 630,
+      "type" : "3,1/2",
+      "zone" : "limoilou",
+      "location": "46.8388973,-71.234234"
+    },
+    "msgrGosselin-1" : {
+      "adresse" : "2790 Avenue Monseigneur Gosselin",
+      "date" : "2017-05-01",
+      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "disponible" : true,
+      "name" : "msgrGosselin-1",
+      "options" : {
+        "chauffe" : false,
+        "eau-chaude" : false,
+        "eclaire" : false,
+        "semi-meuble" : false
+      },
+      "prix" : 825,
+      "type" : "5,1/2",
+      "zone" : "beauport",
+      "location": "46.8495207,-71.2333344"
+    },
+    "msgrGosselin-2" : {
+      "adresse" : "2790 Avenue Monseigneur Gosselin",
+      "date" : "2017-07-01",
+      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "disponible" : false,
+      "name" : "msgrGosselin-1",
+      "options" : {
+        "chauffe" : false,
+        "eau-chaude" : false,
+        "eclaire" : false,
+        "semi-meuble" : false
+      },
+      "prix" : 825,
+      "type" : "7,1/2",
+      "zone" : "limoilou",
+      "location": "46.8495207,-71.2333344"
+    },
+    "riverin-1" : {
+      "adresse" : "1314 rue Provancher",
+      "date" : "2017-07-01",
+      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "disponible" : false,
+      "name" : "riverin-1",
+      "options" : {
+        "chauffe" : true,
+        "eau-chaude" : true,
+        "eclaire" : true,
+        "semi-meuble" : true
+      },
+      "prix" : 795,
+      "type" : "3,1/2",
+      "zone" : "cap-rouge",
+      "location": "46.7562415,-71.3481734"
+    },
+    "riverin-2" : {
+      "adresse" : "1314 rue Provancher",
+      "date" : "2017-07-01",
+      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "disponible" : true,
+      "name" : "riverin-2",
+      "options" : {
+        "chauffe" : true,
+        "eau-chaude" : true,
+        "eclaire" : true,
+        "semi-meuble" : true
+      },
+      "prix" : 830,
+      "type" : "4,1/2",
+      "zone" : "cap-rouge",
+      "location": "46.7562415,-71.3481734"
+    },
+    "riverin-3" : {
+      "adresse" : "1314 rue Provancher",
+      "date" : "2017-07-01",
+      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "disponible" : true,
+      "name" : "riverin-3",
+      "options" : {
+        "chauffe" : true,
+        "eau-chaude" : true,
+        "eclaire" : true,
+        "semi-meuble" : true
+      },
+      "prix" : 920,
+      "type" : "5,1/2",
+      "zone" : "cap-rouge",
+      "location": "46.7562415,-71.3481734"
+    },
+    "villeray-1" : {
+      "adresse" : "1255 Villeray",
+      "date" : "2017-07-01",
+      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "disponible" : true,
+      "name" : "villeray-1",
+      "options" : {
+        "chauffe" : true,
+        "eau-chaude" : true,
+        "eclaire" : true,
+        "semi-meuble" : true
+      },
+      "prix" : 595,
+      "type" : "1,1/2",
+      "zone" : "saint-foy",
+      "location": "46.759234,-71.2963987"
+    },
+    "villeray-2" : {
+      "adresse" : "1255 Villeray",
+      "date" : "2017-07-01",
+      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "disponible" : false,
+      "name" : "villeray-2",
+      "options" : {
+        "chauffe" : true,
+        "eau-chaude" : true,
+        "eclaire" : true,
+        "semi-meuble" : true
+      },
+      "prix" : 595,
+      "type" : "2,1/2",
+      "zone" : "saint-foy",
+      "location": "46.759234,-71.2963987"
+    },
+    "villeray-3" : {
+      "adresse" : "1255 Villeray",
+      "date" : "2017-07-01",
+      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "disponible" : false,
+      "name" : "villeray-3",
+      "options" : {
+        "chauffe" : false,
+        "eau-chaude" : true,
+        "eclaire" : false,
+        "semi-meuble" : false
+      },
+      "prix" : 675,
+      "type" : "3,1/2",
+      "zone" : "saint-foy",
+      "location": "46.759234,-71.2963987"
+    },
+    "villeray-4" : {
+      "adresse" : "1255 Villeray",
+      "date" : "2017-07-01",
+      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "disponible" : true,
+      "name" : "villeray-4",
+      "options" : {
+        "chauffe" : false,
+        "eau-chaude" : true,
+        "eclaire" : false,
+        "semi-meuble" : false
+      },
+      "prix" : 800,
+      "type" : "4,1/2",
+      "zone" : "saint-foy",
+      "location": "46.759234,-71.2963987"
+    }
+  }
+}
