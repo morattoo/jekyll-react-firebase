@@ -33,6 +33,26 @@ class Overlay extends Component {
     return mapImg;
   }
 
+  componentDidMount() {
+
+    const location = this.props.showApto.location.split(',');
+    const myLatLng = {lat: parseFloat(location[0]), lng: parseFloat(location[1])};
+
+    // Create a map object and specify the DOM element for display.
+    var map = new google.maps.Map(document.getElementById('mapApto'), {
+      center: myLatLng,
+      scrollwheel: false,
+      zoom: 15
+    });
+
+    // Create a marker and set its position.
+    var marker = new google.maps.Marker({
+      map: map,
+      position: myLatLng,
+      title: this.props.showApto.adresse
+    });
+  }
+
   render() {
 
     const galleryImages =  this.mapingGallery();
@@ -49,7 +69,7 @@ class Overlay extends Component {
               <div className="gallery">
                 <ImageGallery items={galleryImages} slideInterval={2000}/>
               </div>
-              <div className="mapGoogle"></div>
+              <div id="mapApto" className="mapGoogle"></div>
             </div>
             <div className="showApto__prix">{prix}</div>
             <div className="showApto__type">{type}</div>

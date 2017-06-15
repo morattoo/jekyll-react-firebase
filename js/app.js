@@ -38125,6 +38125,27 @@
 	      return mapImg;
 	    }
 	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+
+	      var location = this.props.showApto.location.split(',');
+	      var myLatLng = { lat: parseFloat(location[0]), lng: parseFloat(location[1]) };
+
+	      // Create a map object and specify the DOM element for display.
+	      var map = new google.maps.Map(document.getElementById('mapApto'), {
+	        center: myLatLng,
+	        scrollwheel: false,
+	        zoom: 15
+	      });
+
+	      // Create a marker and set its position.
+	      var marker = new google.maps.Marker({
+	        map: map,
+	        position: myLatLng,
+	        title: this.props.showApto.adresse
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 
@@ -38164,7 +38185,7 @@
 	              { className: 'gallery' },
 	              _react2.default.createElement(_reactImageGallery2.default, { items: galleryImages, slideInterval: 2000 })
 	            ),
-	            _react2.default.createElement('div', { className: 'mapGoogle' })
+	            _react2.default.createElement('div', { id: 'mapApto', className: 'mapGoogle' })
 	          ),
 	          _react2.default.createElement(
 	            'div',
