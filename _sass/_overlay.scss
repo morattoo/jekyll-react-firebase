@@ -16,7 +16,7 @@
   flex-shrink: 1;
   width: 80%;
   height: 80%;
-  max-width: 600px;
+  max-width: 680px;
   z-index: 23;
   padding: 10px;
   position: relative;
@@ -28,6 +28,10 @@
 
 .wrapperRow {
   display: flex;
+}
+
+.gallery {
+  background: rgba($font-inverse, .5);
 }
 
 .gallery,
@@ -42,7 +46,7 @@
   right: 30px;
   background: transparent;
   border: none;
-  color: #fff;
+  color: $font-inverse;
   z-index: 10;
   outline: none;
   width: 40px;
@@ -51,5 +55,32 @@
   svg {
     width: 100%;
     height: 100%;
+  }
+}
+
+.showApto__description {
+  background: $font-inverse;
+  padding: 8px;
+}
+
+.showApto__adresse {
+  background: $font-inverse;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.showApto__prix {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  display: inline-block;
+  padding: 5px;
+  font-size: 20px;
+  background: $theme-primary;
+  color: $font-inverse;
+
+  span {
+    font-size: 12px;
+    opacity: .5;
   }
 }

@@ -42,7 +42,7 @@ class Overlay extends Component {
     var map = new google.maps.Map(document.getElementById('mapApto'), {
       center: myLatLng,
       scrollwheel: false,
-      zoom: 15
+      zoom: 14
     });
 
     // Create a marker and set its position.
@@ -51,6 +51,11 @@ class Overlay extends Component {
       position: myLatLng,
       title: this.props.showApto.adresse
     });
+
+  }
+
+  componentWillUnmount() {
+    location.reload();
   }
 
   render() {
@@ -71,8 +76,8 @@ class Overlay extends Component {
               </div>
               <div id="mapApto" className="mapGoogle"></div>
             </div>
-            <div className="showApto__prix">{prix}</div>
-            <div className="showApto__type">{type}</div>
+            <div className="showApto__adresse">{adresse}</div>
+            <div className="showApto__prix">{type}  {prix}$ <span>(par moin)</span></div>
             <div className="showApto__description">{description}</div>
           </div>
     </div>);

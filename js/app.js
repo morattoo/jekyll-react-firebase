@@ -38135,7 +38135,7 @@
 	      var map = new google.maps.Map(document.getElementById('mapApto'), {
 	        center: myLatLng,
 	        scrollwheel: false,
-	        zoom: 15
+	        zoom: 14
 	      });
 
 	      // Create a marker and set its position.
@@ -38144,6 +38144,11 @@
 	        position: myLatLng,
 	        title: this.props.showApto.adresse
 	      });
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      location.reload();
 	    }
 	  }, {
 	    key: 'render',
@@ -38189,13 +38194,21 @@
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'showApto__prix' },
-	            prix
+	            { className: 'showApto__adresse' },
+	            adresse
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'showApto__type' },
-	            type
+	            { className: 'showApto__prix' },
+	            type,
+	            '  ',
+	            prix,
+	            '$ ',
+	            _react2.default.createElement(
+	              'span',
+	              null,
+	              '(par moin)'
+	            )
 	          ),
 	          _react2.default.createElement(
 	            'div',
