@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ImageGallery from 'react-image-gallery';
+import Map from '../Map';
 
 class Overlay extends Component {
 
@@ -33,35 +34,11 @@ class Overlay extends Component {
     return mapImg;
   }
 
-  componentDidMount() {
-
-    const location = this.props.showApto.location.split(',');
-    const myLatLng = {lat: parseFloat(location[0]), lng: parseFloat(location[1])};
-
-    // Create a map object and specify the DOM element for display.
-    var map = new google.maps.Map(document.getElementById('mapApto'), {
-      center: myLatLng,
-      scrollwheel: false,
-      zoom: 14
-    });
-
-    // Create a marker and set its position.
-    var marker = new google.maps.Marker({
-      map: map,
-      position: myLatLng,
-      title: this.props.showApto.adresse
-    });
-
-  }
-
-  componentWillUnmount() {
-    location.reload();
-  }
-
   render() {
 
     const galleryImages =  this.mapingGallery();
-    const { adresse, disponible, options, prix, type, name, date, zone, description} = this.props.showApto;
+    const { adresse, disponible, options, prix, type, name, date, zone, description, location} = this.props.showApto;
+
 
     return(<div className="overlay" onClick={this.OutSideHandleClick}>
           <button className="wrapperCenter__close" onClick={this.handleButtonClick}>
@@ -74,7 +51,9 @@ class Overlay extends Component {
               <div className="gallery">
                 <ImageGallery items={galleryImages} slideInterval={2000}/>
               </div>
-              <div id="mapApto" className="mapGoogle"></div>
+              <div className="mapGoogle">
+                <Map location={location}/>
+              </div>
             </div>
             <div className="showApto__adresse">{adresse}</div>
             <div className="showApto__prix">{type}  {prix}$ <span>(par moin)</span></div>
