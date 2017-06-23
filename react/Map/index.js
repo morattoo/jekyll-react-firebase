@@ -1,36 +1,30 @@
-import React, { Component, PropTypes } from 'react'
-import MapboxGl from 'mapbox-gl/dist/mapbox-gl.js'
+import React, { Component, PropTypes } from 'react';
 
 class Map extends Component {
 
   componentDidMount() {
     const location = this.props.location.split(',');
 
-    MapboxGl.accessToken = 'pk.eyJ1IjoibW9yYXR0b28iLCJhIjoiY2o0NHdpcGNnMDBvNTMybzJ3Z2E0OG4yayJ9.iAqEvqzmLI3IRMYQdmzgZg';
-
-    var map = new MapboxGl.Map({
-      container: this.container,
-      style: 'mapbox://styles/mapbox/light-v9',
-      center: [parseFloat(location[1]), parseFloat(location[0])],
-      zoom: 13,
-      hash: true
+    var loc = {lat: parseFloat(location[0]),  lng: parseFloat(location[1])};
+    var map = new google.maps.Map(document.getElementById('gmap'), {
+      zoom: 14,
+      center: loc
     });
-
-    new MapboxGl.Marker()
-    .setLngLat([parseFloat(location[1]), parseFloat(location[0])])
-    .addTo(map);
-    }
+    var marker = new google.maps.Marker({
+      position: loc,
+      map: map
+    });
+  }
 
   render() {
 
     var divStyle = {
-        width: "400px",
-        height: "300px"
+        width: "100%",
+        height: "150px"
       };
 
     return (
-      <div id="mapApto" style={divStyle} ref={(x) => { this.container = x }}>
-      </div>
+      <div id="gmap" className="gmap" style={divStyle}></div>
     )
   }
 }
