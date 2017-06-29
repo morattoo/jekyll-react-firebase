@@ -38166,11 +38166,7 @@
 	            { className: 'showApto__adresse' },
 	            adresse
 	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'showApto__description' },
-	            description
-	          ),
+	          _react2.default.createElement('div', { className: 'showApto__description', dangerouslySetInnerHTML: { __html: description } }),
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'wrapperRow' },
@@ -38184,7 +38180,7 @@
 	              _react2.default.createElement(
 	                'span',
 	                null,
-	                '(par moin)'
+	                '(par mois)'
 	              )
 	            ),
 	            _react2.default.createElement(

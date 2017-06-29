@@ -48,9 +48,9 @@ class Overlay extends Component {
           </button>
           <div className="wrapperCenter">
             <div className="showApto__adresse">{adresse}</div>
-            <div className="showApto__description">{description}</div>
+            <div className="showApto__description" dangerouslySetInnerHTML={{__html: description}}></div>
             <div className="wrapperRow">
-              <div className="showApto__prix">{type}  {prix}$ <span>(par moin)</span></div>
+              <div className="showApto__prix">{type}  {prix}$ <span>(par mois)</span></div>
               <div className="gallery">
                 <ImageGallery items={galleryImages} slideInterval={2000}/>
               </div>
