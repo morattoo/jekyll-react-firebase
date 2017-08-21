@@ -16,17 +16,28 @@
   height: 80%;
   max-width: 680px;
   z-index: 23;
-  padding: 10px;
-  background: $font-inverse;
-  position: relative;
-  overflow: hidden;
-  overflow-y: auto;
-  overflow-x: hidden;
-  box-shadow: 0 0 11px 0 rgba($theme-secondary, .5);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
 
   .image-gallery {
     padding: 0;
   }
+}
+
+.wrapperCenter__header {
+  position: relative;
+  background: $theme-secondary;
+  color: #fff;
+  flex: none;
+}
+
+.wrapperCenter__body {
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .wrapperRow {
@@ -76,7 +87,6 @@
 }
 
 .showApto__adresse {
-  background: $font-inverse;
   font-size: 20px;
   padding: 5px;
 }
