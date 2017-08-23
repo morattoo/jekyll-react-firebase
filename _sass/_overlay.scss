@@ -19,6 +19,7 @@
   background: #fff;
   display: flex;
   flex-direction: column;
+  border: 1px solid $theme-secondary;
 
   .image-gallery {
     padding: 0;
@@ -59,21 +60,16 @@
 
 .wrapperCenter__close {
   position: absolute;
-  top: 7%;
-  right: 2%;
   background: transparent;
   border: none;
   z-index: 10;
   outline: none;
   width: 30px;
   height: 20px;
-
-  @media (min-width: 768px) {
-    top: 7%;
-    right: 7%;
-    width: 40px;
-    height: 30px;
-  }
+  transform: translateY(50%);
+  top: 0;
+  right: 10px;
+  margin-top: -3px;
 
   svg {
     width: 100%;
@@ -84,11 +80,17 @@
 .showApto__description {
   background: $font-inverse;
   padding: 8px;
+
+  ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    list-style-type: circle;
+  }
 }
 
 .showApto__adresse {
   font-size: 20px;
-  padding: 5px;
+  padding: 5px 30px 5px 5px;
 }
 
 .showApto__prix {
