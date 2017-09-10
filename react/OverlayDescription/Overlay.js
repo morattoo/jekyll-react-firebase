@@ -21,7 +21,7 @@ class Overlay extends Component {
     this.props.closeOverlay();
   }
 
-  mapingGallery () {
+  mapingGalleryDefault () {
     var mapImg = [];
 
     for (var i = 0; i < 8; i++) {
@@ -34,11 +34,24 @@ class Overlay extends Component {
     return mapImg;
   }
 
+  mapingGallery (photos, name) {
+    var mapImg = [];
+
+    for (var i = 0; i < photos; i++) {
+      let path = "img/aptos/"+ name +"/"+ (i+1) +".jpg";
+      let pathThumbnail = "img/aptos/"+ name +"/thumbnails/"+ (i+1) +"_tn.jpg";
+
+      mapImg.push({original: path , thumbnail: pathThumbnail});
+    }
+
+    return mapImg;
+  }
+
   render() {
 
-    const galleryImages =  this.mapingGallery();
-    const { adresse, disponible, options, prix, type, name, date, zone, description, location} = this.props.showApto;
 
+    const { adresse, disponible, options, prix, type, name, date, zone, description, location, photos} = this.props.showApto;
+    const galleryImages = (photos !== 0) ? this.mapingGallery(photos, name) : this.mapingGalleryDefault();
 
     return(<div className="overlay" onClick={this.OutSideHandleClick}>
 

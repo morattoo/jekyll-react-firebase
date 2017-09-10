@@ -38115,8 +38115,8 @@
 	      this.props.closeOverlay();
 	    }
 	  }, {
-	    key: 'mapingGallery',
-	    value: function mapingGallery() {
+	    key: 'mapingGalleryDefault',
+	    value: function mapingGalleryDefault() {
 	      var mapImg = [];
 
 	      for (var i = 0; i < 8; i++) {
@@ -38129,10 +38129,22 @@
 	      return mapImg;
 	    }
 	  }, {
+	    key: 'mapingGallery',
+	    value: function mapingGallery(photos, name) {
+	      var mapImg = [];
+
+	      for (var i = 0; i < photos; i++) {
+	        var path = "img/aptos/" + name + "/" + (i + 1) + ".jpg";
+	        var pathThumbnail = "img/aptos/" + name + "/thumbnails/" + (i + 1) + "_tn.jpg";
+
+	        mapImg.push({ original: path, thumbnail: pathThumbnail });
+	      }
+
+	      return mapImg;
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
-
-	      var galleryImages = this.mapingGallery();
 	      var _props$showApto = this.props.showApto,
 	          adresse = _props$showApto.adresse,
 	          disponible = _props$showApto.disponible,
@@ -38143,8 +38155,10 @@
 	          date = _props$showApto.date,
 	          zone = _props$showApto.zone,
 	          description = _props$showApto.description,
-	          location = _props$showApto.location;
+	          location = _props$showApto.location,
+	          photos = _props$showApto.photos;
 
+	      var galleryImages = photos !== 0 ? this.mapingGallery(photos, name) : this.mapingGalleryDefault();
 
 	      return _react2.default.createElement(
 	        'div',
