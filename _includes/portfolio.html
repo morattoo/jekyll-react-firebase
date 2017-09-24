@@ -1,111 +1,26 @@
 <section class="no-padding" id="portfolio">
     <div class="container-fluid">
         <div class="row no-gutter">
+
+        {% for immeuble in site.data.immeubles %}
             <div class="col-lg-4 col-sm-6">
-                <a href="immeubles.html" class="portfolio-box">
-                    <img src="img/portfolio/1.jpg" class="img-responsive" alt="">
+                <a href="{{immeuble.url}}?immeuble={{immeuble.parametre}}" class="portfolio-box">
+                    <img src="{{immeuble.img}}" class="img-responsive" alt="">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
                             <div class="project-category text-faded">
-                                Immeubles à logements
+                                {{immeuble.type}}
                             </div>
                             <div class="project-name">
-                                1314 rue Provancher, Riverin.
+                                {{immeuble.name}}
                             </div>
+                            <span class="project-complet">{{immeuble.complet}}</span>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="immeubles.html" class="portfolio-box">
-                    <img src="img/portfolio/2.jpg" class="img-responsive" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Immeubles à logements
-                            </div>
-                            <div class="project-name">
-                                3025 chemin Ste-Foy, Le 3025.
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="immeubles.html" class="portfolio-box">
-                    <img src="img/portfolio/3.jpg" class="img-responsive" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Immeubles à logements
-                            </div>
-                            <div class="project-name">
-                                150-160 26ème rue, 26 ème rue.
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="immeubles.html" class="portfolio-box">
-                    <img src="img/portfolio/4.jpg" class="img-responsive" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Immeubles à logements
-                            </div>
-                            <div class="project-name">
-                                1720-1722 Avenue Jeanne-Mance, Jeanne-Mance.
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="immeubles.html" class="portfolio-box">
-                    <img src="img/portfolio/5.jpg" class="img-responsive" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Immeubles à logements
-                            </div>
-                            <div class="project-name">
-                                2790 Avenue Monseigneur Gosselin, Msgr Gosselin.
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="immeubles.html" class="portfolio-box">
-                    <img src="img/portfolio/6.jpg" class="img-responsive" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Immeubles à logements
-                            </div>
-                            <div class="project-name">
-                                1255 Villeray, Le Villeray.
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="immeublescommercial.html" class="portfolio-box">
-                    <img src="img/portfolio/7.jpg" class="img-responsive" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Locaux commerciaux
-                            </div>
-                            <div class="project-name">
-                                1685 Chemin de la Canardière
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+        {% endfor %}
+            
         </div>
     </div>
 </section>

@@ -44,14 +44,16 @@ class Overlay extends Component {
       mapImg.push({original: path , thumbnail: pathThumbnail});
     }
 
-    return mapImg;
+    return (<div className="gallery">
+              <ImageGallery items={mapImg} slideInterval={2000}/>
+            </div>);
   }
 
   render() {
 
 
     const { adresse, disponible, options, prix, type, name, date, zone, description, location, photos} = this.props.showApto;
-    const galleryImages = (photos !== 0) ? this.mapingGallery(photos, name) : this.mapingGalleryDefault();
+    const galleryImages = (photos !== 0) ? this.mapingGallery(photos, name) : null;
 
     return(<div className="overlay" onClick={this.OutSideHandleClick}>
 
@@ -68,9 +70,7 @@ class Overlay extends Component {
               <div className="showApto__description" dangerouslySetInnerHTML={{__html: description}}></div>
               <div className="wrapperRow">
                 <div className="showApto__prix">{type}  {prix}$ <span>(par mois)</span></div>
-                <div className="gallery">
-                  <ImageGallery items={galleryImages} slideInterval={2000}/>
-                </div>
+                {galleryImages}
                 <Map location={location}/>
               </div>
             </div>

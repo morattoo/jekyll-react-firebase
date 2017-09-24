@@ -21907,11 +21907,23 @@
 	        return _react2.default.createElement(_item2.default, { key: index, apto: apto, actionOverlay: this.activeOverlay });
 	      }.bind(this));
 
-	      return _react2.default.createElement(
-	        'ul',
-	        { className: 'listAptos__container' },
-	        listAptos
-	      );
+	      if (listAptos.length > 0) {
+	        return _react2.default.createElement(
+	          'ul',
+	          { className: 'listAptos__container' },
+	          listAptos
+	        );
+	      } else {
+	        return _react2.default.createElement(
+	          'ul',
+	          { className: 'listAptos__container' },
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            'D\xE9sol\xE9, il n\'y pas des results, essayez \xE0 nouveau!'
+	          )
+	        );
+	      }
 	    }
 	  }, {
 	    key: 'componentWillMount',
@@ -21929,6 +21941,18 @@
 
 	        this.setState({ aptos: newList });
 	      }.bind(this));
+
+	      var inmmeuble = location.search.split('immeuble=')[1] ? location.search.split('immeuble=')[1] : "";
+
+	      if (inmmeuble !== "") {
+	        this.setState({
+	          filtersActive: {
+	            type: 'Tous',
+	            zone: 'Tous',
+	            search: inmmeuble
+	          }
+	        });
+	      }
 	    }
 	  }, {
 	    key: 'activeOverlay',
@@ -38140,7 +38164,11 @@
 	        mapImg.push({ original: path, thumbnail: pathThumbnail });
 	      }
 
-	      return mapImg;
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'gallery' },
+	        _react2.default.createElement(_reactImageGallery2.default, { items: mapImg, slideInterval: 2000 })
+	      );
 	    }
 	  }, {
 	    key: 'render',
@@ -38158,7 +38186,7 @@
 	          location = _props$showApto.location,
 	          photos = _props$showApto.photos;
 
-	      var galleryImages = photos !== 0 ? this.mapingGallery(photos, name) : this.mapingGalleryDefault();
+	      var galleryImages = photos !== 0 ? this.mapingGallery(photos, name) : null;
 
 	      return _react2.default.createElement(
 	        'div',
@@ -38204,11 +38232,7 @@
 	                  '(par mois)'
 	                )
 	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'gallery' },
-	                _react2.default.createElement(_reactImageGallery2.default, { items: galleryImages, slideInterval: 2000 })
-	              ),
+	              galleryImages,
 	              _react2.default.createElement(_Map2.default, { location: location })
 	            )
 	          )

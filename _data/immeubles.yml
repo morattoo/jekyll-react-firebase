@@ -1,0 +1,49 @@
+- name: 1314 rue Provancher, Riverin.
+  parametre: riverin
+  type: Immeubles à logements
+  url: immeubles.html
+  img: img/portfolio/1.jpg
+  complet: ""
+
+- name: 3025 chemin Ste-Foy, Le 3025.
+  parametre: le3025
+  type: Immeubles à logements
+  url: immeubles.html
+  img: img/portfolio/2.jpg
+  complet: ""
+
+- name: 150-160 26ème rue, 26 ème rue.
+  parametre: 26emerue
+  type: Immeubles à logements
+  url: immeubles.html
+  img: img/portfolio/3.jpg
+  complet: "complet"
+
+- name: 1720-1722 Avenue Jeanne-Mance, Jeanne-Mance.
+  parametre: jeanneMance
+  type: Immeubles à logements
+  url: immeubles.html
+  img: img/portfolio/4.jpg
+  complet: ""
+
+- name: 2790 Avenue Monseigneur Gosselin, Msgr Gosselin.
+  parametre: msgrGosselin
+  type: Immeubles à logements
+  url: immeubles.html
+  img: img/portfolio/5.jpg
+  complet: ""
+
+- name: 1255 Villeray, Le Villeray.
+  parametre: villeray
+  type: Immeubles à logements
+  url: immeubles.html
+  img: img/portfolio/6.jpg
+  complet: ""
+
+- name: 1685 Chemin de la Canardière
+  parametre: villeray
+  type: Locaux commerciaux
+  url: immeublescommercial.html
+  img: img/portfolio/7.jpg
+  complet: ""
+

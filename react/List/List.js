@@ -68,7 +68,15 @@ class List extends Component {
       return(<Item key={index} apto={apto} actionOverlay={this.activeOverlay}/>);
     }.bind(this));
 
-    return (<ul className="listAptos__container">{listAptos}</ul>);
+    if(listAptos.length > 0){
+      return (<ul className="listAptos__container">{listAptos}</ul>);
+    } else {
+      return (<ul className="listAptos__container">
+                  <li>Désolé, il n'y pas des results, essayez à nouveau!</li>
+              </ul>);
+    }
+
+    
   }
 
   componentWillMount() {
@@ -86,6 +94,20 @@ class List extends Component {
       this.setState({aptos: newList});
 
     }.bind(this));
+
+
+    var inmmeuble = location.search.split('immeuble=')[1] ? location.search.split('immeuble=')[1] : "";
+
+    if( inmmeuble !== "") {
+      this.setState({
+        filtersActive: {
+          type: 'Tous',
+          zone: 'Tous',
+          search: inmmeuble
+          }
+        }
+      );
+    }
 
   }
 

@@ -3,7 +3,7 @@
     "26emerue-1" : {
       "adresse" : "150-160 26ème rue",
       "date" : "2017-07-01",
-      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "description" : "Désolé, on n'a pas de description pour le moment.",
       "disponible" : true,
       "location" : "46.835434,-71.2431831",
       "name" : "26emerue-1",
@@ -31,7 +31,7 @@
         "eclaire" : true,
         "semi-meuble" : true
       },
-      "photos" : 4,
+      "photos" : 2,
       "prix" : 595,
       "type" : "1,1/2",
       "zone" : "saint-foy"
@@ -67,26 +67,8 @@
         "eclaire" : false,
         "semi-meuble" : false
       },
-      "photos" : 4,
+      "photos" : 3,
       "prix" : 565,
-      "type" : "3,1/2",
-      "zone" : "limoilou"
-    },
-    "la18emerue-1" : {
-      "adresse" : "188 Eugène de la montagne, Limoilou.",
-      "date" : "2017-05-01",
-      "description" : "<p>640$ TOUT INCLUS, Semi-meublé. RÉNOVÉ</p>  <p>App. à 2 pas de tout!!!.</p> <p>Près de l'hôpital l'Enfant-Jésus (120 mts)</p> <p>9 min à pied (750mts) du CÉGEP de Limoilou, parc et piscine Ferland, école primaire Jean de Brébeuf et CPE La Becquée.</p> <p>Accès facile à l’autoroute Félix-Leclerc.</p> <p>Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et du nouvel amphithéâtre.</p> <p>Autobus à pied, parcours sur la 18e rue :802, 36, 4, 3a et 3g. Parcours sur Boul. H-Bourassa : 290, 136, 133, 36.</p>  <ul> \t<li>Accès direct aux pistes cyclables.</li> \t<li>Planchers de bois flottant et céramique.</li> \t<li>Immeuble tranquille et sécuritaire. Conciergerie dans l’édifice.</li> \t<li>Buanderie au sous-sol.</li> \t<li>Pas de stationnement.</li> </ul>  <p>Pour plus d'informations ou pour une visite, contactez-nous au 418-627-7448.</p>  <p>Au plaisir de vous rencontrer et de vous servir !</p>",
-      "disponible" : true,
-      "location" : "46.827922,-71.2461682",
-      "name" : "la18emerue-1",
-      "options" : {
-        "chauffe" : true,
-        "eau-chaude" : true,
-        "eclaire" : true,
-        "semi-meuble" : true
-      },
-      "photos" : 0,
-      "prix" : 630,
       "type" : "3,1/2",
       "zone" : "limoilou"
     },
@@ -111,7 +93,7 @@
     "le3025-3" : {
       "adresse" : "3025 chemin Ste-Foy",
       "date" : "2017-08-01",
-      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
+      "description" : "Désolé, on n'a pas de description pour le moment.",
       "disponible" : true,
       "location" : "46.7756617,-71.3122461",
       "name" : "le3025-3",
@@ -140,7 +122,7 @@
         "semi-meuble" : true
       },
       "photos" : 4,
-      "prix" : 630,
+      "prix" : 635,
       "type" : "3,1/2",
       "zone" : "limoilou"
     },
@@ -247,7 +229,7 @@
         "eclaire" : true,
         "semi-meuble" : true
       },
-      "photo" : 3,
+      "photos" : 3,
       "prix" : 595,
       "type" : "1,1/2",
       "zone" : "saint-foy"
