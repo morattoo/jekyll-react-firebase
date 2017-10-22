@@ -3,8 +3,14 @@
         <div class="row no-gutter">
 
         {% for immeuble in site.data.immeubles %}
+
             <div class="col-lg-4 col-sm-6">
-                <a href="{{immeuble.url}}?immeuble={{immeuble.parametre}}" class="portfolio-box">
+                    {% if immeuble.complet %}
+                        <a class="portfolio-box">
+                    {% else %}
+                        <a href="{{immeuble.url}}?immeuble={{immeuble.parametre}}" class="portfolio-box">
+                    {% endif %}
+                
                     <img src="{{immeuble.img}}" class="img-responsive" alt="">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
@@ -14,7 +20,13 @@
                             <div class="project-name">
                                 {{immeuble.name}}
                             </div>
-                            <span class="project-complet">{{immeuble.complet}}</span>
+
+                            {% if immeuble.complet %}
+                                <span class="project-complet">Complet</span>
+                            {% else %}
+                                <span class="project-complet"></span> 
+                            {% endif %}
+                            
                         </div>
                     </div>
                 </a>
