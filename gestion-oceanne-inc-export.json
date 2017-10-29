@@ -4,14 +4,15 @@
       "adresse" : "150-160 26ème rue",
       "date" : "2017-07-01",
       "description" : "Désolé, on n'a pas de description pour le moment.",
-      "disponible" : true,
+      "disponible" : false,
       "location" : "46.835434,-71.2431831",
       "name" : "26emerue-1",
       "options" : {
         "chauffe" : true,
         "eau-chaude" : false,
         "eclaire" : false,
-        "semi-meuble" : false
+        "semi-meuble" : false,
+        "wifi" : false
       },
       "photos" : 0,
       "prix" : 785,
@@ -29,8 +30,9 @@
         "chauffe" : true,
         "eau-chaude" : true,
         "eclaire" : true,
-        "semi-meuble" : true
-      },
+        "semi-meuble" : true,
+        "wifi" : false
+    },
       "photos" : 2,
       "prix" : 595,
       "type" : "1,1/2",
@@ -47,8 +49,9 @@
         "chauffe" : false,
         "eau-chaude" : false,
         "eclaire" : false,
-        "semi-meuble" : true
-      },
+        "semi-meuble" : true,
+        "wifi" : false
+    },
       "photos" : 0,
       "prix" : 600,
       "type" : "2,1/2",
@@ -65,7 +68,8 @@
         "chauffe" : false,
         "eau-chaude" : false,
         "eclaire" : false,
-        "semi-meuble" : false
+        "semi-meuble" : false,
+        "wifi" : false
       },
       "photos" : 3,
       "prix" : 565,
@@ -83,8 +87,9 @@
         "chauffe" : true,
         "eau-chaude" : true,
         "eclaire" : true,
-        "semi-meuble" : true
-      },
+        "semi-meuble" : true,
+        "wifi" : false
+    },
       "photos" : 0,
       "prix" : 590,
       "type" : "2,1/2",
@@ -93,7 +98,7 @@
     "le3025-3" : {
       "adresse" : "3025 chemin Ste-Foy",
       "date" : "2017-08-01",
-      "description" : "Désolé, on n'a pas de description pour le moment.",
+      "description" : "<p>LIBRE 3 1/2 TOUT INCLUS semi-meublé</p> <p>Sur le Chemin Ste-Foy, Immeuble tranquille et sécuritaire, avec clef magnétique et intercom à l'entrée.</p> <ul>     <li>Stationnement déneigé.</li>     <li>Espace de rangement.</li>     <li>Buanderie dans l'immeuble.</li>  </ul>  <p>Beaucoup de commodités à proximité : centre d'achats, restaurants, épicerie, pharmacie, école et beaucoup plus.</p> <p>Photos à titre indicatif seulement.</p> <p>Pour plus d'informations ou pour une visite, contactez-nous au 418-627-7448.</p> <p>Au plaisir de vous rencontrer et de vous servir !</p>",
       "disponible" : true,
       "location" : "46.7756617,-71.3122461",
       "name" : "le3025-3",
@@ -101,9 +106,10 @@
         "chauffe" : true,
         "eau-chaude" : true,
         "eclaire" : true,
-        "semi-meuble" : true
+        "semi-meuble" : true,
+        "wifi" : false
       },
-      "photos" : 0,
+      "photos" : 3,
       "prix" : 690,
       "type" : "3,1/2",
       "zone" : "saint-foy"
@@ -119,7 +125,8 @@
         "chauffe" : true,
         "eau-chaude" : true,
         "eclaire" : true,
-        "semi-meuble" : true
+        "semi-meuble" : true,
+        "wifi" : false
       },
       "photos" : 4,
       "prix" : 635,
@@ -137,7 +144,8 @@
         "chauffe" : false,
         "eau-chaude" : false,
         "eclaire" : false,
-        "semi-meuble" : false
+        "semi-meuble" : false,
+        "wifi" : false
       },
       "photos" : 5,
       "prix" : 825,
@@ -155,7 +163,8 @@
         "chauffe" : false,
         "eau-chaude" : false,
         "eclaire" : false,
-        "semi-meuble" : false
+        "semi-meuble" : false,
+        "wifi" : false
       },
       "photos" : 0,
       "prix" : 825,
@@ -165,17 +174,18 @@
     "riverin-1" : {
       "adresse" : "1314 rue Provancher",
       "date" : "2017-07-01",
-      "description" : "Près de l'hôpital l'Enfant-Jésus et du CÉGEP de Limoilou. Accès facile à l’autoroute Félix-Leclerc Près de la 3e Avenue donc près de toutes les commodités : école, épicerie, pharmacie, restaurants et beaucoup plus. Autobus à pied, parcours 800, 802, 4, 28 et 36. Accès direct aux pistes cyclables. Planchers de bois flottant et céramique. Immeuble tranquille et sécuritaire avec clé magnétique et intercom à l’entrée. Buanderie au sous-sol. Stationnement déneigé.",
-      "disponible" : false,
+      "description" : "<p> \t4 1/2 rue Provencher à Cap-Rouge. Pres du Campus Notre Dame de Foy. Près de la marina et de la plage Jacques Cartier. 795$ TOUT INCLUS ! Rénové, peinturé et très propre. Immeuble tranquille et sécuritaire,clef codé et intercom. Entrée laveuse-sécheuse. </p>  <p>Beaucoup de commodités à proximité : restaurants, épicerie, pharmacie, école, parcs et beaucoup plus</p>  <p>Pour plus d'informations ou pour une visite, contactez-nous au 418-627-7448.</p>  <p>Au plaisir de vous rencontrer et de vous servir !</p>",
+      "disponible" : true,
       "location" : "46.7562415,-71.3481734",
       "name" : "riverin-1",
       "options" : {
         "chauffe" : true,
         "eau-chaude" : true,
         "eclaire" : true,
-        "semi-meuble" : true
+        "semi-meuble" : true,
+        "wifi" : false
       },
-      "photos" : 3,
+      "photos" : 4,
       "prix" : 795,
       "type" : "3,1/2",
       "zone" : "cap-rouge"
@@ -191,9 +201,10 @@
         "chauffe" : true,
         "eau-chaude" : true,
         "eclaire" : true,
-        "semi-meuble" : true
+        "semi-meuble" : true,
+        "wifi" : false
       },
-      "photos" : 0,
+      "photos" : 5,
       "prix" : 830,
       "type" : "4,1/2",
       "zone" : "cap-rouge"
@@ -209,7 +220,8 @@
         "chauffe" : true,
         "eau-chaude" : true,
         "eclaire" : true,
-        "semi-meuble" : true
+        "semi-meuble" : true,
+        "wifi" : false
       },
       "photos" : 5,
       "prix" : 920,
@@ -227,7 +239,8 @@
         "chauffe" : true,
         "eau-chaude" : true,
         "eclaire" : true,
-        "semi-meuble" : true
+        "semi-meuble" : true,
+        "wifi" : false
       },
       "photos" : 3,
       "prix" : 595,
@@ -245,7 +258,8 @@
         "chauffe" : true,
         "eau-chaude" : true,
         "eclaire" : true,
-        "semi-meuble" : true
+        "semi-meuble" : true,
+        "wifi" : false
       },
       "photos" : 0,
       "prix" : 595,
@@ -263,7 +277,8 @@
         "chauffe" : false,
         "eau-chaude" : true,
         "eclaire" : false,
-        "semi-meuble" : false
+        "semi-meuble" : false,
+        "wifi" : false
       },
       "photos" : 0,
       "prix" : 675,
@@ -281,9 +296,10 @@
         "chauffe" : false,
         "eau-chaude" : true,
         "eclaire" : false,
-        "semi-meuble" : false
+        "semi-meuble" : false,
+        "wifi" : false
       },
-      "photos" : 0,
+      "photos" : 5,
       "prix" : 800,
       "type" : "4,1/2",
       "zone" : "saint-foy"

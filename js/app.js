@@ -38063,6 +38063,10 @@
 	          classNameIcon = "fa fa-bed";
 	          displayName = this.props.active ? "Semi-meublé" : "Non semi-meublé";
 	          break;
+	        case "wifi":
+	          classNameIcon = "fa fa-wifi";
+	          displayName = this.props.active ? "Wi-Fi" : "Non wi-fi";
+	          break;
 	        default:
 	      }
 
@@ -38215,24 +38219,32 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'wrapperCenter__body' },
-	            _react2.default.createElement('div', { className: 'showApto__description', dangerouslySetInnerHTML: { __html: description } }),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'wrapperRow wrapperRow--description' },
+	              _react2.default.createElement('div', { className: 'showApto__description', dangerouslySetInnerHTML: { __html: description } }),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'wrapper__gallery' },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'showApto__prix' },
+	                  type,
+	                  '  ',
+	                  prix,
+	                  '$ ',
+	                  _react2.default.createElement(
+	                    'span',
+	                    null,
+	                    '(par mois)'
+	                  )
+	                ),
+	                galleryImages
+	              )
+	            ),
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'wrapperRow' },
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'showApto__prix' },
-	                type,
-	                '  ',
-	                prix,
-	                '$ ',
-	                _react2.default.createElement(
-	                  'span',
-	                  null,
-	                  '(par mois)'
-	                )
-	              ),
-	              galleryImages,
 	              _react2.default.createElement(_Map2.default, { location: location })
 	            )
 	          )
@@ -40642,7 +40654,12 @@
 	      var loc = { lat: parseFloat(location[0]), lng: parseFloat(location[1]) };
 	      var map = new google.maps.Map(document.getElementById('gmap'), {
 	        zoom: 14,
-	        center: loc
+	        center: loc,
+	        mapTypeControl: true,
+	        mapTypeControlOptions: {
+	          style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+	          mapTypeIds: ['roadmap', 'terrain']
+	        }
 	      });
 	      var marker = new google.maps.Marker({
 	        position: loc,
@@ -40655,7 +40672,7 @@
 
 	      var divStyle = {
 	        width: "100%",
-	        height: "150px"
+	        height: "250px"
 	      };
 
 	      return _react2.default.createElement('div', { id: 'gmap', className: 'gmap', style: divStyle });

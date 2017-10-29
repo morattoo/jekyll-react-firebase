@@ -28,6 +28,10 @@ class ServiceItem extends Component {
         classNameIcon="fa fa-bed";
         displayName = this.props.active ? "Semi-meublé" : "Non semi-meublé";
         break;
+      case "wifi":
+        classNameIcon="fa fa-wifi";
+        displayName = this.props.active ? "Wi-Fi" : "Non wi-fi";
+        break;
       default:
     }
 

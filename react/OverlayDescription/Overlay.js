@@ -67,10 +67,14 @@ class Overlay extends Component {
               </button>
             </div>
             <div className="wrapperCenter__body">
-              <div className="showApto__description" dangerouslySetInnerHTML={{__html: description}}></div>
+              <div className="wrapperRow wrapperRow--description">
+                <div className="showApto__description" dangerouslySetInnerHTML={{__html: description}}></div>
+                <div className="wrapper__gallery">
+                  <div className="showApto__prix">{type}  {prix}$ <span>(par mois)</span></div>
+                  {galleryImages}
+                </div>
+              </div>
               <div className="wrapperRow">
-                <div className="showApto__prix">{type}  {prix}$ <span>(par mois)</span></div>
-                {galleryImages}
                 <Map location={location}/>
               </div>
             </div>
