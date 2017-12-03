@@ -10,7 +10,7 @@
   type: Immeubles à logements
   url: immeubles.html
   img: img/portfolio/2.jpg
-  complet: false
+  complet: true
 
 - name: 150-160 26ème rue, 26 ème rue.
   parametre: 26emerue
@@ -41,9 +41,16 @@
   complet: false
 
 - name: 1685 Chemin de la Canardière
-  parametre: villeray
+  parametre: ''
   type: Locaux commerciaux
   url: immeublescommercial.html
   img: img/portfolio/7.jpg
+  complet: false
+
+- name: 2340 Avenue de Mont-Thabor
+  parametre: mont-thabor
+  type: Immeubles à logements
+  url: immeubles.html
+  img: img/portfolio/8.jpg
   complet: false
 
